@@ -18,6 +18,7 @@ class Register extends StatelessWidget {
             ),
           ),
           Positioned(
+            //Card
             top: 250,
             left: 0,
             right: 0,
@@ -33,6 +34,7 @@ class Register extends StatelessWidget {
             ),
           ),
           Positioned(
+            //sign up free card
             top: 350,
             left: 30,
             right: 30,
@@ -48,6 +50,30 @@ class Register extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: 365,
+            left: 95,
+            right: 95,
+            child: Text(
+              "Sign Up Free",
+              style: GoogleFonts.poppins(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              semanticsLabel: "Sign Up Free",
+            ),
+          ),
+          const Positioned(
+              top: 425,
+              left: 30,
+              right: 30,
+              child: Icon(
+                Icons.favorite,
+                color: Colors.white,
+                size: 50,
+              )),
+          Positioned(
+            //continue with google card
             top: 425,
             left: 30,
             right: 30,
@@ -55,10 +81,23 @@ class Register extends StatelessWidget {
               width: 280,
               height: 57,
               decoration: ShapeDecoration(
-                color: Color(0xff404452),
+                color: const Color(0xff404452),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 440,
+            left: 80,
+            right: 70,
+            child: Text(
+              "Continue with google",
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
