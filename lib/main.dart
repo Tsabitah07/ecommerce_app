@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/RegisterPage.dart';
 import 'package:flutter/material.dart';
+import './view/RegisterPage.dart';
 
 void main() {
   runApp(const MyApp());
