@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:flutter/material.dart';
 import './view/RegisterPage.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Register(),
+      home: LoginPage(),
     );
   }
 }
