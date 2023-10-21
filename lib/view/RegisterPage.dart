@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+//note ganti dari positioned ke column
 
 class Register extends StatelessWidget {
   @override
@@ -11,8 +14,8 @@ class Register extends StatelessWidget {
           Positioned(
             left: 35,
             right: 35,
-            child: Image.asset(
-              'assets/images/RegShop.png',
+            child: SvgPicture.asset(
+              'assets/images/Reg.svg',
               width: 250,
               height: 245,
             ),
@@ -50,28 +53,30 @@ class Register extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: 270,
+            left: 60,
+            child: Text(
+              "Let's get Started!",
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Positioned(
             top: 365,
-            left: 95,
-            right: 95,
+            left: 140,
+            right: 120,
             child: Text(
               "Sign Up Free",
               style: GoogleFonts.poppins(
                 color: Colors.black,
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
-              semanticsLabel: "Sign Up Free",
             ),
           ),
-          const Positioned(
-              top: 425,
-              left: 30,
-              right: 30,
-              child: Icon(
-                Icons.favorite,
-                color: Colors.white,
-                size: 50,
-              )),
           Positioned(
             //continue with google card
             top: 425,
@@ -89,14 +94,23 @@ class Register extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: 436,
+            left: 50,
+            child: SvgPicture.asset(
+              'assets/images/Google.svg',
+              height: 32,
+              width: 32,
+            ),
+          ),
+          Positioned(
             top: 440,
-            left: 80,
+            left: 95,
             right: 70,
             child: Text(
-              "Continue with google",
+              "Continue with google ",
               style: GoogleFonts.poppins(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
