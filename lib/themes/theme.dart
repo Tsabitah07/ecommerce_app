@@ -48,6 +48,6 @@ TextStyle Paragraph({required final color}) {
 
 String RunShop = "assets/images/Reg.svg";
 String Google = "assets/images/Google.svg";
-String Access = "assets/images/Accessible.svg";
-String Banking = "assets/images/Banking.svg";
-String Warranty = "assets/images/Warranty.svg";
+String Access = "assets/images/Accesspng.png";
+String Prot = "assets/images/Prot.png";
+String Trade = "assets/images/Trade.png";
