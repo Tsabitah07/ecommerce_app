@@ -1,7 +1,8 @@
+import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/widget/button.dart';
 import 'package:ecommerce_app/widget/textInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -18,31 +19,30 @@ class LoginPage extends StatelessWidget {
                 child: SvgPicture.asset(
                   'assets/images/Reg.svg',
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * .42,
+                  height: MediaQuery.of(context).size.height * .7,
                 ),
               ),
             ),
             Align(
               alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .6,
+                  height: MediaQuery.of(context).size.height * .43,
                   width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: primaryText,
                         borderRadius: BorderRadius.circular(20)
                     ),
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.all(19),
+                          margin: EdgeInsets.only(top: 19, bottom: 14),
                           child: Text("Welcome Back",
-                              style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.bold),
+                              style: loginRegisterHeader,
                           ),
                         ),
-                        inputValue("Username", false)
+                        inputValue("Username", false),
+                        inputValue("Password", true),
+                        button("LOGIN")
                       ],
                     ),
                 )
@@ -50,4 +50,5 @@ class LoginPage extends StatelessWidget {
           ]
       ),
     );
+  }
 }
