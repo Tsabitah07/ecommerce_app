@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/textInput.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,13 @@ class LoginPage extends StatelessWidget {
                 child: SvgPicture.asset(
                   'assets/images/Reg.svg',
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .41,
                 ),
               ),
             ),
             Align(
-              alignment: Alignment.topLeft,
-              child: InkWell(
+                alignment: Alignment.topLeft,
+                child: InkWell(
                   child: Container(
                     margin: EdgeInsets.all(13),
                     padding: EdgeInsets.all(11),
@@ -38,30 +39,31 @@ class LoginPage extends StatelessWidget {
                       color: commonText,
                     ),
                   ),
-              )
+                )
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+                alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .45,
+                  height: MediaQuery.of(context).size.height * .61,
                   width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: primaryText,
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 19, bottom: 14),
-                          child: Text("Welcome Back",
-                              style: loginRegisterHeader,
-                          ),
+                  decoration: BoxDecoration(
+                      color: primaryText,
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 19, bottom: 14),
+                        child: Text("Welcome-!!",
+                          style: loginRegisterHeader,
                         ),
-                        inputValue("Username", false),
-                        inputValue("Password", true),
-                        button("LOGIN")
-                      ],
-                    ),
+                      ),
+                      inputValue("Email", false),
+                      inputValue("Username", false),
+                      inputValue("Password", true),
+                      button("REGISTER")
+                    ],
+                  ),
                 )
             )
           ]
