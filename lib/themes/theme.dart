@@ -44,6 +44,22 @@ TextStyle Paragraph({required final color}) {
   );
 }
 
+TextStyle loginRegisterHeader = GoogleFonts.poppins(
+  textStyle: TextStyle(
+      color: Colors.black,
+      fontSize: 27,
+      fontWeight: FontWeight.bold
+  ),
+);
+
+TextStyle buttonTextStyle = GoogleFonts.poppins(
+  textStyle: TextStyle(
+      fontSize: 17,
+      fontWeight: FontWeight.bold,
+      color: primaryText
+  )
+);
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";
