@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/view/LandingPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

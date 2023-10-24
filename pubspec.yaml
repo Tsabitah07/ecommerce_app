@@ -65,5 +65,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/Google.svg
+    - assets/images/Accessible.svg
+    - assets/images/Banking.svg
+    - assets/images/Warranty.svg
 
     

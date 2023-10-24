@@ -76,7 +76,7 @@ class LandingPage extends StatelessWidget {
                         height: 32,
                         width: 32,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ), // Add some spacing between the icon and text
                       Text(

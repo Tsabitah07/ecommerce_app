@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -5,39 +6,39 @@ import 'package:flutter_svg/svg.dart';
 class OnBoardingContent extends StatelessWidget {
   const OnBoardingContent({
     super.key,
-    // required this.image1,
+    required this.image1,
     // required this.image2,
     required this.title,
     required this.description,
   });
 
-  final String title, description;
+  final String image1, title, description;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SvgPicture.asset(
+          image1,
+          width: 360,
+        ),
+        Spacer(),
         // SvgPicture.asset(
-        //     // image1,
-        //     // width: 360,
-        //     ),
-        // Spacer(),
-        // SvgPicture.asset(
-        //     // image2,
-        //     // width: 230,
+        //     image2,
+        //     width: 230,
         //     )
         Spacer(),
+
+        //Title
         Container(
           width: 260,
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Headers(color: Colors.white),
           ),
         ),
+        //Desc
         Padding(
           padding: const EdgeInsets.only(top: 15),
           child: SizedBox(
@@ -45,8 +46,8 @@ class OnBoardingContent extends StatelessWidget {
             child: Text(
               description,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
+              style: Paragraph(
+                color: Colors.white,
               ),
             ),
           ),
@@ -60,22 +61,24 @@ class OnBoardingContent extends StatelessWidget {
 //List On Boarding Content
 class OnBoardingContentList {
   final List<OnBoardingContent> list_on_board = [
-    const OnBoardingContent(
-      // image1: "assets/images/OnBoarding1.svg",
+    OnBoardingContent(
+      image1: Access,
       // image2: "assets/icons/Icon1.svg",
-      title: "Purchase Online !!",
+      title: "Easy Access",
       description:
-          "Kami Menyediakan Layanan Pembelian Dengan Mudah Menggunakan Ponsel Anda",
+          "We provide easy access a wide selection of products for our customer to browse",
     ),
-    const OnBoardingContent(
-        // image1: "assets/images/OnBoarding2.svg",
+    OnBoardingContent(
+        image1: Banking,
         // image2: "assets/icons/Icon2.svg",
-        title: "Fast Delivery !!",
-        description: "Memiliki Kurir Yang Kencang Boss, Barang Cepat Sampai"),
-    const OnBoardingContent(
-        // image1: "assets/images/OnBoarding3.svg",
+        title: "Simple transaction",
+        description:
+            "list payment plans to choose from Mastercard to other mobile app transaction"),
+    OnBoardingContent(
+        image1: Warranty,
         // image2: "assets/icons/Icon3.svg",
-        title: "Get your order !!",
-        description: "Ambil Paketmu Sendiri Jika Sudah Diantar"),
+        title: "Best warranty protection",
+        description:
+            "We provide customer purchases with the best protection, so they wont fear of anything happening to their ordered items"),
   ];
 }
