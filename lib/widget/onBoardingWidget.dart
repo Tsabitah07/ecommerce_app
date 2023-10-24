@@ -18,7 +18,7 @@ class OnBoardingContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SvgPicture.asset(
+        Image.asset(
           image1,
           width: 360,
         ),
@@ -69,13 +69,13 @@ class OnBoardingContentList {
           "We provide easy access a wide selection of products for our customer to browse",
     ),
     OnBoardingContent(
-        image1: Banking,
+        image1: Trade,
         // image2: "assets/icons/Icon2.svg",
         title: "Simple transaction",
         description:
             "list payment plans to choose from Mastercard to other mobile app transaction"),
     OnBoardingContent(
-        image1: Warranty,
+        image1: Prot,
         // image2: "assets/icons/Icon3.svg",
         title: "Best warranty protection",
         description:
