@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 const primaryColor = Color(0xff8A83EF);
 const primaryText = Colors.white;
 const secondaryColor = Color(0xff2A2A2A);
+const commonText = Colors.black;
 const linear1 = Color(0xffE7B0B8);
 const linear2 = Color(0xffBFD9CE);
 
@@ -46,8 +47,8 @@ TextStyle Paragraph({required final color}) {
 
 TextStyle loginRegisterHeader = GoogleFonts.poppins(
   textStyle: TextStyle(
-      color: Colors.black,
-      fontSize: 27,
+      color: commonText,
+      fontSize: 31,
       fontWeight: FontWeight.bold
   ),
 );

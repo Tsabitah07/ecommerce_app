@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/themes/theme.dart';
-import 'package:ecommerce_app/widget/button.dart';
+import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/textInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,14 +19,31 @@ class LoginPage extends StatelessWidget {
                 child: SvgPicture.asset(
                   'assets/images/Reg.svg',
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * .7,
+                  height: MediaQuery.of(context).size.height * .68,
                 ),
               ),
             ),
             Align(
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                  child: Container(
+                    margin: EdgeInsets.all(13),
+                    padding: EdgeInsets.all(11),
+                    decoration: BoxDecoration(
+                        color: primaryText,
+                        shape: BoxShape.circle
+                    ),
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: commonText,
+                    ),
+                  ),
+              )
+            ),
+            Align(
               alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .43,
+                  height: MediaQuery.of(context).size.height * .45,
                   width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: primaryText,
