@@ -62,10 +62,12 @@ class LoginPage extends StatelessWidget {
                         button("LOGIN")
                       ],
                     ),
-                )
-            )
-          ]
-      ),
+                  ),
+                  inputValue("Username", false)
+                ],
+              ),
+            ))
+      ]),
     );
   }
 }
