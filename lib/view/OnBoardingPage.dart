@@ -81,12 +81,14 @@ class OnBoardingPageView extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(
                           left: 20,
+                          top: 10,
+                          bottom: 10,
                           right: 20,
                         ),
                         child: Text(
                           'Start',
                           style: GoogleFonts.poppins(
-                            color: primaryText,
+                            color: secondaryColor,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
