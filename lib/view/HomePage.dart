@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:ecommerce_app/controller/AppBarController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
@@ -82,16 +83,46 @@ class HomePage extends StatelessWidget {
       ),
       body: GetBuilder<MyAppBarController>(
         builder: (controller) {
-          // Your homepage content here
+          Expanded(
+            child: Row(
+              children: [
+                Text(
+                  "Categorys",
+                  style: Headers(color: Colors.black),
+                )
+              ],
+            ),
+          );
           return ListView.builder(
             controller: controller.scrollController,
-            itemCount: 100,
+            itemCount: 10,
             itemBuilder: (context, index) {
-              // Your list item widgets here
-              return ListTile(title: Text('Item $index'));
+              return Row(
+                children: [
+                  Container(
+                      // width: 20,
+                      // height: 20,
+                      // color: primaryColor,
+                      ),
+                ],
+              );
             },
           );
         },
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: diffgrey,
+        color: secondaryColor,
+        items: const [
+          Icon(
+            Icons.house,
+            color: primaryText,
+          ),
+          Icon(Icons.person_rounded,
+          color: primaryText,),
+          Icon(Icons.account_balance_wallet_rounded,
+          color: primaryText,)
+        ],
       ),
     );
   }
