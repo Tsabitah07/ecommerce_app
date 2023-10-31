@@ -9,6 +9,7 @@ const secondaryColor = Color(0xff2A2A2A);
 const commonText = Colors.black;
 const linear1 = Color(0xffE7B0B8);
 const linear2 = Color(0xffBFD9CE);
+const diffgrey = Color.fromARGB(255, 60, 60, 60);
 
 const Linear = LinearGradient(
     begin: Alignment.centerRight,
@@ -46,20 +47,21 @@ TextStyle Paragraph({required final color}) {
 }
 
 TextStyle loginRegisterHeader = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      color: commonText,
-      fontSize: 31,
-      fontWeight: FontWeight.bold
-  ),
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
 
 TextStyle buttonTextStyle = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      fontSize: 17,
-      fontWeight: FontWeight.bold,
-      color: primaryText
-  )
-);
+    textStyle: TextStyle(
+        fontSize: 17, fontWeight: FontWeight.bold, color: primaryText));
+
+TextStyle MiniImportant({required final color}) {
+  return GoogleFonts.poppins(
+    color: color,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+}
 
 //image asset
 
