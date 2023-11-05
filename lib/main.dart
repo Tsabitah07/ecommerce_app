@@ -1,3 +1,5 @@
+
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // theme: customTheme,
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );

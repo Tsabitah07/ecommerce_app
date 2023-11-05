@@ -20,7 +20,7 @@ class MyAppBarController extends GetxController {
 
   void scrollListener(double offset) {
     scrollOffset.value = offset;
-    if (offset > 200) {
+    if (offset > 50) {
       showTitle.value = true;
     } else if (offset <= 200) {
       showTitle.value = false;
