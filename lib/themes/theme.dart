@@ -70,3 +70,9 @@ String Google = "assets/images/Google.svg";
 String Access = "assets/images/Accesspng.png";
 String Prot = "assets/images/Prot.png";
 String Trade = "assets/images/Trade.png";
+
+//theme color
+
+ThemeData customTheme = ThemeData(
+  primaryColor: Colors.transparent, // Set your primary color
+);
