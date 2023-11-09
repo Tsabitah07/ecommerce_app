@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
+import 'package:ecommerce_app/view/BtmSheet.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:ecommerce_app/widget/HomepageWidget.dart';
 import 'package:flutter/material.dart';
@@ -13,19 +14,18 @@ class BtmNavBar extends StatelessWidget {
   void _navigateToHome(BuildContext context) {
     // Replace 'HomeClass' with the actual class you want to navigate to
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => Homebase()));
   }
 
   void _navigateToWallet(BuildContext context) {
-    // Replace 'WalletClass' with the actual class you want to navigate to
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LoginPage()));
+    Wallet.show(context);
   }
 
   void _navigateToProfile(BuildContext context) {
     // Replace 'ProfileClass' with the actual class you want to navigate to
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => RegisterPage()));
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => RegisterPage()));
+    ProfilebtmSheet.show(context);
   }
 
   @override

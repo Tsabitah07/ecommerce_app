@@ -9,7 +9,7 @@ import 'package:ecommerce_app/widget/HomepageWidget.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
+class Homebase extends StatelessWidget {
   final MyAppBarController myController = Get.put(MyAppBarController());
 
   @override
@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
       ),
       body: GetBuilder<MyAppBarController>(
         builder: (controller) {
-          return HompageView();
+          return HomepageView();
         },
       ),
       bottomNavigationBar: BtmNavBar(),
