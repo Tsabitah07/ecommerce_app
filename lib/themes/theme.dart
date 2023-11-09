@@ -47,12 +47,13 @@ TextStyle Paragraph({required final color}) {
 }
 
 TextStyle Header = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      color: commonText,
-      fontSize: 31,
-      fontWeight: FontWeight.bold
-  ),
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
+
+TextStyle loginRegisterHeader = GoogleFonts.poppins(
+    textStyle: TextStyle(
+        color: commonText, fontSize: 31, fontWeight: FontWeight.bold));
 
 TextStyle buttonTextStyle = GoogleFonts.poppins(
     textStyle: TextStyle(

@@ -14,7 +14,7 @@ class BtmNavBar extends StatelessWidget {
   void _navigateToHome(BuildContext context) {
     // Replace 'HomeClass' with the actual class you want to navigate to
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => Homebase()));
   }
 
   void _navigateToWallet(BuildContext context) {

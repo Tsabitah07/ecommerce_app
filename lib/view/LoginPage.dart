@@ -64,31 +64,8 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: MediaQuery.of(context).size.height * .45,
-                  width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: primaryText,
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 19, bottom: 14),
-                          child: Text("Welcome Back",
-                              style: Header,
-                          ),
-                        ),
-                        inputValue("Username", false),
-                        inputValue("Password", true),
-                        button("LOGIN")
-                      ],
-                    ),
-                )
-            )
-          ]
+          ), // Moved the closing parenthesis here
+        ], // Removed duplicate container block
       ),
     );
   }

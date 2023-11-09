@@ -1,27 +1,25 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app/themes/imageLists.dart';
 import 'package:ecommerce_app/themes/theme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class HompageView extends StatefulWidget {
-  const HompageView({super.key});
+class HomepageView extends StatefulWidget {
+  const HomepageView({super.key});
 
   @override
-  State<HompageView> createState() => _HompageViewState();
+  State<HomepageView> createState() => _HompageViewState();
 }
 
-class _HompageViewState extends State<HompageView> {
+class _HompageViewState extends State<HomepageView> {
   @override
   Widget build(BuildContext context) {
-    // Get screen width and height using MediaQuery
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
     // Define responsive constants
     final searchContainerWidth = screenWidth > 600 ? 400.0 : 300.0;
-    final categoryContainerSize = screenWidth > 600 ? 85.0 : 65.0;
-    final catalogContainerWidth = screenWidth > 600 ? 150.0 : 120.0;
+    final categoryContainerSize = screenWidth > 600 ? 120.0 : 80.0;
+    final catalogContainerWidth = screenWidth > 500 ? 220.0 : 180.0;
 
     return ListView(
       children: [
@@ -54,14 +52,16 @@ class _HompageViewState extends State<HompageView> {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
-            Text(
-              "Category's",
-              style: Headers(color: Colors.black),
+            Center(
+              child: Text(
+                "Category's",
+                style: Headers(color: secondaryColor),
+              ),
             ),
             SizedBox(
-              height: 15,
+              height: 30,
             ),
             // Adjust category containers
             Center(
@@ -72,13 +72,13 @@ class _HompageViewState extends State<HompageView> {
                     children: [
                       for (var i = 0; i < 3; i++)
                         Padding(
-                          padding: const EdgeInsets.all(25.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Container(
                             height: categoryContainerSize,
                             width: categoryContainerSize,
                             decoration: BoxDecoration(
                               color: primaryColor, // Change color as needed
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
                         ),
@@ -89,13 +89,13 @@ class _HompageViewState extends State<HompageView> {
                     children: [
                       for (var i = 0; i < 3; i++)
                         Padding(
-                          padding: const EdgeInsets.all(25.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Container(
                             height: categoryContainerSize,
                             width: categoryContainerSize,
                             decoration: BoxDecoration(
                               color: primaryColor, // Change color as needed
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
                         ),
@@ -105,18 +105,12 @@ class _HompageViewState extends State<HompageView> {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 60,
             ),
             SizedBox(
-              height: 75,
+              height: 60,
               child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Text("Catalog",
-                      style:
-                          Headers(color: Colors.black) // Change style as needed
-                      ),
-                ),
+                child: Text("Catalog", style: Headers(color: secondaryColor)),
               ),
             ),
             Center(
@@ -142,26 +136,33 @@ class _HompageViewState extends State<HompageView> {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 60,
             ),
-            Center(
-              child: Stack(
-                children: [
-                  Container(
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                      ),
-                      items: imageSliders,
-                    ),
-                  ),
-                  Text(
-                    "HOT SALES",
-                    style: MiniImportant(color: Colors.black),
-                  ),
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: 10.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "HOT SALE",
+                  style: Headers(color: secondaryColor),
+                ),
               ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Stack(children: [
+              Container(
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                  ),
+                  items: imageSliders,
+                ),
+              ),
+            ]),
+            SizedBox(
+              height: 60,
             )
           ],
         ),
