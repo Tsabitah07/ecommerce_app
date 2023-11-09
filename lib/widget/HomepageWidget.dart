@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_app/themes/imageLists.dart';
 import 'package:ecommerce_app/themes/theme.dart';
-import 'package:get/get.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class HompageView extends StatefulWidget {
   const HompageView({super.key});
@@ -12,6 +14,15 @@ class HompageView extends StatefulWidget {
 class _HompageViewState extends State<HompageView> {
   @override
   Widget build(BuildContext context) {
+    // Get screen width and height using MediaQuery
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    // Define responsive constants
+    final searchContainerWidth = screenWidth > 600 ? 400.0 : 300.0;
+    final categoryContainerSize = screenWidth > 600 ? 85.0 : 65.0;
+    final catalogContainerWidth = screenWidth > 600 ? 150.0 : 120.0;
+
     return ListView(
       children: [
         Column(
@@ -23,11 +34,12 @@ class _HompageViewState extends State<HompageView> {
               child: Stack(
                 children: [
                   Container(
-                    width: 400,
+                    width: searchContainerWidth,
                     height: 60,
                     decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(20)),
+                      color: secondaryColor, // Change color as needed
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
                   const Positioned(
                     height: 60,
@@ -44,100 +56,66 @@ class _HompageViewState extends State<HompageView> {
             SizedBox(
               height: 40,
             ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Category's",
-                  style: Headers(color: secondaryColor),
-                ),
-              ),
+            Text(
+              "Category's",
+              style: Headers(color: Colors.black),
             ),
-            Center(
-              // Wrap the rows in Center widget
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 15,
             ),
+            // Adjust category containers
             Center(
-              // Wrap the rows in Center widget
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for (var i = 0; i < 3; i++)
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Container(
+                            height: categoryContainerSize,
+                            width: categoryContainerSize,
+                            decoration: BoxDecoration(
+                              color: primaryColor, // Change color as needed
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 85,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for (var i = 0; i < 3; i++)
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Container(
+                            height: categoryContainerSize,
+                            width: categoryContainerSize,
+                            decoration: BoxDecoration(
+                              color: primaryColor, // Change color as needed
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 60,
+              height: 40,
+            ),
+            SizedBox(
+              height: 75,
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
-                  child: Text(
-                    "Catalog",
-                    style: Headers(color: secondaryColor),
-                  ),
+                  child: Text("Catalog",
+                      style:
+                          Headers(color: Colors.black) // Change style as needed
+                      ),
                 ),
               ),
             ),
@@ -147,38 +125,42 @@ class _HompageViewState extends State<HompageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        height: 250,
-                        decoration: BoxDecoration(
+                    for (var i = 0; i < 4; i++)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: catalogContainerWidth,
+                          height: 250,
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: primaryColor),
+                            color: primaryColor, // Change color as needed
+                          ),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        height: 250,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: primaryColor),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        height: 250,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: primaryColor),
-                      ),
-                    )
                   ],
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: Stack(
+                children: [
+                  Container(
+                    child: CarouselSlider(
+                      options: CarouselOptions(
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                      ),
+                      items: imageSliders,
+                    ),
+                  ),
+                  Text(
+                    "HOT SALES",
+                    style: MiniImportant(color: Colors.black),
+                  ),
+                ],
               ),
             )
           ],
