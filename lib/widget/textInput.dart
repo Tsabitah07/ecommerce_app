@@ -18,3 +18,24 @@ Widget inputValue(
     ),
   );
 }
+
+Widget walletInputValue(
+    String label, bool isObsecure, controller, onChange) {
+  return Container(
+    margin: EdgeInsets.symmetric(vertical: 13, horizontal: 29),
+    // color: primaryText,
+    child: TextField(
+      obscureText: isObsecure,
+      obscuringCharacter: "*",
+      onChanged: (value){
+        onChange;
+      },
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14)
+        ),
+        labelText: label,
+      ),
+    ),
+  );
+}

@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 19, bottom: 14),
                     child: Text(
                       "Welcome Back",
-                      style: loginRegisterHeader,
+                      style: Header,
                     ),
                   ),
                   inputValue("Username", false),
