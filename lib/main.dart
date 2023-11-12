@@ -3,6 +3,7 @@ import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
+import 'package:ecommerce_app/widget/addPaymentMethod.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: AddPaymentMethod(),
     );
   }
 }
