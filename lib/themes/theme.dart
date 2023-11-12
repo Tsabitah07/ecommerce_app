@@ -47,12 +47,13 @@ TextStyle Paragraph({required final color}) {
 }
 
 TextStyle Header = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      color: commonText,
-      fontSize: 31,
-      fontWeight: FontWeight.bold
-  ),
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
+
+TextStyle loginRegisterHeader = GoogleFonts.poppins(
+    textStyle: TextStyle(
+        color: commonText, fontSize: 31, fontWeight: FontWeight.bold));
 
 TextStyle buttonTextStyle = GoogleFonts.poppins(
     textStyle: TextStyle(
@@ -73,3 +74,9 @@ String Google = "assets/images/Google.svg";
 String Access = "assets/images/Accesspng.png";
 String Prot = "assets/images/Prot.png";
 String Trade = "assets/images/Trade.png";
+
+//theme color
+
+ThemeData customTheme = ThemeData(
+  primaryColor: Colors.transparent, // Set your primary color
+);
