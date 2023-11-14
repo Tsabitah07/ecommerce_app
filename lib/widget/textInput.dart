@@ -43,14 +43,29 @@ Widget inputValue2(
 
 Widget buildImagePreview(String imagePath, size) {
   if (imagePath.isEmpty) {
-    return Container();
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 25),
+      width: size, height: size,
+      decoration: BoxDecoration(
+          color: Colors.black.withOpacity(.2),
+        shape: BoxShape.circle,
+          border: Border.all(
+              width: 2.5,
+              color: linear2
+          )
+      ),
+    );
   } else {
     return Container(
       padding: EdgeInsets.all(15),
-      height: 100,
-      width: 100,
+      height: size,
+      width: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
+        border: Border.all(
+          width: 2.5,
+          color: linear2
+        )
       ),
       child: Container(
         width: size, height: size,

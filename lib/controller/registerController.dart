@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/view/HomePage.dart';
+import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -33,13 +34,13 @@ class RegisterController extends GetxController{
 
     // Save user information to SharedPreferences
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('email', email);
-    prefs.setString('username', username);
-    prefs.setString('phoneNumber', phoneNumber);
-    prefs.setString('password', password);
-    prefs.setString('imagePath', imagePath.value);
+    await prefs.setString('emailPath', email);
+    await prefs.setString('usernamePath', username);
+    await prefs.setString('phoneNumberPath', phoneNumber);
+    await prefs.setString('passwordPath', password);
+    await prefs.setString('imagePath', imagePath.value);
 
-    Get.off(Homebase());
+    Get.off(ProfilePage());
 
     Get.snackbar("Congrats", "Login Succes");
 
