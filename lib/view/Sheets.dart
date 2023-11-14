@@ -49,3 +49,20 @@ class Wallet {
         });
   }
 }
+
+class Wishlist {
+  static void show(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 120,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(color: Colors.white),
+            child: Column(
+              children: [ListTile()],
+            ),
+          );
+        });
+  }
+}
