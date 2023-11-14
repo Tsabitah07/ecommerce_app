@@ -1,43 +1,44 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterController extends GetxController{
-  TextEditingController imageController = TextEditingController();
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  late TextEditingController emailController = TextEditingController();
+  late TextEditingController usernameController = TextEditingController();
+  late TextEditingController phoneNumberController = TextEditingController();
+  late TextEditingController passwordController = TextEditingController();
+  late RxString imagePath;
 
-  XFile? _selectedImage;
-
-  XFile? get selectedImage => _selectedImage;
-
-  Future<void> requestPermissions() async {
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.camera,
-      Permission.microphone,
-      Permission.photos,
-    ].request();
+  @override
+  void onInit() {
+    super.onInit();
+    imagePath = RxString('');
   }
 
-  Future<void> pickImageFromGallery() async {
-    final imagePicker = ImagePicker();
-    final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
-
+  Future<void> pickImage() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
-      _selectedImage = pickedFile;
+      imagePath.value = pickedFile.path;
     }
   }
 
-  Future<void> takePhoto() async {
-    final imagePicker = ImagePicker();
-    final pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
+  Future<void> register() async {
+    // Implement your registration logic here
+    String email = usernameController.text;
+    String username = passwordController.text;
+    String phoneNumber = passwordController.text;
+    String password = passwordController.text;
 
-    if (pickedFile != null) {
-      // Use the pickedFile to access the captured image.
-    }
+    // Save user information to SharedPreferences
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', email);
+    prefs.setString('username', username);
+    prefs.setString('phoneNumber', phoneNumber);
+    prefs.setString('password', password);
+    prefs.setString('imagePath', imagePath.value);
+
+    // Navigate to the next screen or perform any other action
+    // For example, you can use Get.to(() => NextScreen());
   }
 }

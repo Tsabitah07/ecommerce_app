@@ -28,10 +28,6 @@ class AddPaymentMethod extends StatelessWidget {
             ),
             inputValue(
               "bank Name", false),
-            walletInputValue(
-              "card Number", true, walletController.cardNumberController,
-              walletController.updateCardNumber
-            ),
             inputValue("expiry Date", false),
             inputValue("card Holder Name", false),
             inputValue("cvv Code", true),
