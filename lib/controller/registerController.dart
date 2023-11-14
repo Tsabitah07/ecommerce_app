@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -37,6 +38,10 @@ class RegisterController extends GetxController{
     prefs.setString('phoneNumber', phoneNumber);
     prefs.setString('password', password);
     prefs.setString('imagePath', imagePath.value);
+
+    Get.off(Homebase());
+
+    Get.snackbar("Congrats", "Login Succes");
 
     // Navigate to the next screen or perform any other action
     // For example, you can use Get.to(() => NextScreen());
