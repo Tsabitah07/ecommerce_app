@@ -37,6 +37,8 @@ dependencies:
   firebase_core: 
   firebase_auth: 
   cloud_firestore:
+  image_picker:
+  permission_handler:
   flutter_credit_card: ^4.0.1
   curved_navigation_bar: 
   carousel_slider: ^4.2.1
