@@ -1,27 +1,50 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/textInput.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+
+import '../controller/registerController.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  final controller = Get.put(RegisterController());
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(
           children:[
             Align(
               alignment: Alignment.topCenter,
               child: Container(
+                width: screenWidth,
+                height: screenHeight * .43,
                 color: Color(0xff8A83EF),
-                child: SvgPicture.asset(
-                  'assets/images/Reg.svg',
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * .41,
-                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 75,
+                      // backgroundColor: Colors.grey[300],
+                      backgroundImage: controller.selectedImage != null
+                          ? FileImage(File(controller.selectedImage!.path))
+                          : null,
+                    ),
+                    SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () async {
+                        await controller.pickImageFromGallery();
+                      },
+                      child: Text('Add Photo'),
+                    ),
+                  ],
+                )
               ),
             ),
             Align(
@@ -61,7 +84,10 @@ class RegisterPage extends StatelessWidget {
                       inputValue("Email", false),
                       inputValue("Username", false),
                       inputValue("Password", true),
-                      button("REGISTER")
+                      InkWell(
+                        onTap: (){},
+                          child: button("REGISTER"),
+                      )
                     ],
                   ),
                 )
