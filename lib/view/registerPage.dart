@@ -29,7 +29,7 @@ class RegisterPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Obx(() => buildImagePreview(controller.imagePath.value, screenWidth * .5)),
+                      Obx(() => buildImagePreview(controller.imagePath.value, screenWidth * .25)),
                       InkWell(
                         onTap: () => controller.pickImage(),
                         child: button("Add Image", primaryText, primaryColor),

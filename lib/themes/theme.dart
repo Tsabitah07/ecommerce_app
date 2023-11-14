@@ -75,6 +75,13 @@ TextStyle MiniImportant({required final color}) {
   );
 }
 
+TextStyle profileDataText = GoogleFonts.poppins(
+  textStyle: TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.w500
+  )
+);
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";
