@@ -69,7 +69,7 @@ class RegisterPage extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(top: 19, bottom: 14),
                         child: Text("Welcome-!!",
-                          style: loginRegisterHeader,
+                          style: Header,
                         ),
                       ),
                       inputValue("Email", false),

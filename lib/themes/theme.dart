@@ -9,6 +9,7 @@ const secondaryColor = Color(0xff2A2A2A);
 const commonText = Colors.black;
 const linear1 = Color(0xffE7B0B8);
 const linear2 = Color(0xffBFD9CE);
+const diffgrey = Color.fromARGB(255, 60, 60, 60);
 
 const Linear = LinearGradient(
     begin: Alignment.centerRight,
@@ -45,6 +46,11 @@ TextStyle Paragraph({required final color}) {
   );
 }
 
+TextStyle Header = GoogleFonts.poppins(
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
+);
+
 TextStyle loginRegisterHeader = GoogleFonts.poppins(
   textStyle: TextStyle(
       color: commonText,
@@ -61,6 +67,14 @@ TextStyle buttonTextStyle ({color}) {
   );
 }
 
+TextStyle MiniImportant({required final color}) {
+  return GoogleFonts.poppins(
+    color: color,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+}
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";
@@ -68,3 +82,9 @@ String Google = "assets/images/Google.svg";
 String Access = "assets/images/Accesspng.png";
 String Prot = "assets/images/Prot.png";
 String Trade = "assets/images/Trade.png";
+
+//theme color
+
+ThemeData customTheme = ThemeData(
+  primaryColor: Colors.transparent, // Set your primary color
+);

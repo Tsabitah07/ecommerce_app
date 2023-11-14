@@ -14,7 +14,7 @@ Widget inputValue(
       obscuringCharacter: "*",
       decoration: InputDecoration(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14)
+            borderRadius: BorderRadius.circular(14)
         ),
         hintText: hint,
       ),
