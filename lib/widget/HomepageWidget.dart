@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app/themes/imageLists.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce_app/model/data_model.dart';
 
 class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
@@ -79,6 +80,11 @@ class _HompageViewState extends State<HomepageView> {
                             decoration: BoxDecoration(
                               color: primaryColor, // Change color as needed
                               borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    products[i]["product_image"] as String),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -87,14 +93,18 @@ class _HompageViewState extends State<HomepageView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      for (var i = 0; i < 3; i++)
+                      for (var i = 3; i < 6; i++)
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             height: categoryContainerSize,
                             width: categoryContainerSize,
                             decoration: BoxDecoration(
-                              color: primaryColor, // Change color as needed
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    products[i]["product_image"] as String),
+                              ),
+                              color: primaryColor,
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
@@ -119,13 +129,17 @@ class _HompageViewState extends State<HomepageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 0; i < 4; i++)
+                    for (var i = 6; i < 10; i++)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           width: catalogContainerWidth,
                           height: 250,
                           decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  products[i]["product_image"] as String),
+                            ),
                             borderRadius: BorderRadius.circular(20),
                             color: primaryColor, // Change color as needed
                           ),
