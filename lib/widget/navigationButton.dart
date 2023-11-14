@@ -1,17 +1,17 @@
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
 
-Widget button (buttonText){
+Widget button (buttonText, backgrounColor, fontColor){
   return Container(
     padding: EdgeInsets.symmetric(vertical: 11, horizontal: 31),
     margin: EdgeInsets.symmetric(vertical: 11, horizontal: 24),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(9),
-      color: primaryColor,
+      color: backgrounColor,
     ),
     child: Text(
         buttonText,
-      style: buttonTextStyle
+      style: buttonTextStyle(color: fontColor)
     ),
   );
 }

@@ -23,28 +23,19 @@ class RegisterPage extends StatelessWidget {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                width: screenWidth,
-                height: screenHeight * .43,
-                color: Color(0xff8A83EF),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 75,
-                      // backgroundColor: Colors.grey[300],
-                      backgroundImage: controller.selectedImage != null
-                          ? FileImage(File(controller.selectedImage!.path))
-                          : null,
-                    ),
-                    SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () async {
-                        await controller.pickImageFromGallery();
-                      },
-                      child: Text('Add Photo'),
-                    ),
-                  ],
-                )
+                  width: screenWidth,
+                  height: screenHeight * .43,
+                  color: Color(0xff8A83EF),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Obx(() => buildImagePreview(controller.imagePath.value, screenWidth * .5)),
+                      InkWell(
+                        onTap: () => controller.pickImage(),
+                        child: button("Add Image", primaryText, primaryColor),
+                      ),
+                    ],
+                  )
               ),
             ),
             Align(
@@ -85,8 +76,10 @@ class RegisterPage extends StatelessWidget {
                       inputValue("Username", false),
                       inputValue("Password", true),
                       InkWell(
-                        onTap: (){},
-                          child: button("REGISTER"),
+                        onTap: () => controller.register(),
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                            child: button("REGISTER", primaryColor, primaryText)),
                       )
                     ],
                   ),

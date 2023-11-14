@@ -53,13 +53,13 @@ TextStyle loginRegisterHeader = GoogleFonts.poppins(
   ),
 );
 
-TextStyle buttonTextStyle = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      fontSize: 17,
+TextStyle buttonTextStyle ({color}) {
+  return GoogleFonts.poppins(
+      fontSize: 14,
       fontWeight: FontWeight.bold,
-      color: primaryText
-  )
-);
+      color: color
+  );
+}
 
 //image asset
 

@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         inputValue("Username", false),
                         inputValue("Password", true),
-                        button("LOGIN")
+                        button("LOGIN", primaryColor, primaryText)
                       ],
                     ),
                 )
