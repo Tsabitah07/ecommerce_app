@@ -26,6 +26,20 @@ class AddPaymentMethod extends StatelessWidget {
               cvvCode: walletController.cvvCodeController.text,
               showBackView: false, onCreditCardWidgetChange: (CreditCardBrand ) {  },
             ),
+            Expanded(
+                child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        CreditCardWidget(
+                          cardNumber: '',
+                          expiryDate: '',
+                          cardHolderName: '',
+                          cvvCode: '',
+                          showBackView: true,
+                          onCreditCardWidgetChange: (CreditCardBrand ) {  },),
+                      ],
+                    )
+            )),
             inputValue(
               "bank Name", false),
             walletInputValue(
