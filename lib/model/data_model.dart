@@ -477,9 +477,21 @@ void main() {
   products;
 }
 
-final List<String> HOTSALE = [
-  "https://s4.bukalapak.com/img/43384213003/s-463-463/data.jpeg.webp",
-  "https://www.adidas.co.id/media/catalog/product/h/3/h31069_2_apparel_photography_front20center20view_grey.jpg",
-  "https://www.adidas.co.id/media/catalog/product/i/b/ib7410_2_apparel_photography_front20center20view_grey.jpg"
-  "https://www.footlocker.id/media/catalog/product/cache/e81e4f913a1cad058ef66fea8e95c839/0/1/01-ADIDAS-E04HPADI5-ADIFQ4641-WHITE.jpg",
+final List<Map<String, String>> HOTSALE = [
+  {
+    "name": "Adidas White Sneaker",
+    "img": "https://s4.bukalapak.com/img/43384213003/s-463-463/data.jpeg.webp"
+  },
+  {
+    "name": "Adidas Shorts",
+    "img": "https://www.adidas.co.id/media/catalog/product/h/3/h31069_2_apparel_photography_front20center20view_grey.jpg"
+  },
+  {
+    "name": "Adidas shirt",
+    "img": "https://www.adidas.co.id/media/catalog/product/i/b/ib7410_2_apparel_photography_front20center20view_grey.jpg"
+  },
+  {
+    "name": "Adidas Black Sneaker",
+    "img": "https://media.kohlsimg.com/is/image/kohls/5533230_Black_White_Black?wid=240&hei=240&op_sharpen=1"
+  },
 ];

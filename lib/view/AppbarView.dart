@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/view/Sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/controller/AppBarController.dart';
@@ -49,7 +50,9 @@ class AppbarView extends StatelessWidget {
                       backgroundColor: Colors.white,
                       radius: 22,
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Wishlist.show(context);
+                        },
                         icon: Icon(
                           Icons.favorite_border_rounded,
                           color: secondaryColor,
