@@ -79,6 +79,6 @@ class OnBoardingContentList {
         // image2: "assets/icons/Icon3.svg",
         title: "Best warranty protection",
         description:
-            "We provide customer purchases with the best protection, so they wont fear of anything happening to their ordered items"),
+            "We provide customer purchases with the best protection for their items"),
   ];
 }
