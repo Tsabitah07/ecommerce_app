@@ -10,6 +10,7 @@ import 'package:ecommerce_app/widget/HomepageWidget.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ecommerce_app/model/data_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Sheets.dart';
 
 class Homebase extends StatelessWidget {
   final MyAppBarController myController = Get.put(MyAppBarController());
@@ -103,7 +104,9 @@ class Homebase extends StatelessWidget {
                             backgroundColor: Colors.white,
                             radius: 22,
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Wishlist.show(context);
+                              },
                               icon: Icon(
                                 Icons.favorite_border_rounded,
                                 color: secondaryColor,

@@ -137,9 +137,9 @@ class _HompageViewState extends State<HomepageView> {
                           height: 250,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage(
-                                  products[i]["product_image"] as String),
-                            ),
+                                image: NetworkImage(
+                                    products[i]["product_image"] as String),
+                                fit: BoxFit.cover),
                             borderRadius: BorderRadius.circular(20),
                             color: primaryColor, // Change color as needed
                           ),

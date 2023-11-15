@@ -1,13 +1,13 @@
-import 'package:ecommerce_app/controller/firebaseController.dart';
+// import 'package:ecommerce_app/controller/firebaseController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LandingPage extends StatelessWidget {
-  final FirebaseController _firebaseController = FirebaseController();
+  // final FirebaseController _firebaseController = FirebaseController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,41 +64,41 @@ class LandingPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                InkWell(
-                  onTap: () {
-                    _firebaseController.signInWithGoogle();
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(18),
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    decoration: BoxDecoration(
-                      color: Color(0xff404452),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    margin: EdgeInsets.only(top: 40),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          Google,
-                          height: 32,
-                          width: 32,
-                        ),
-                        const SizedBox(
-                          width: 2,
-                        ), // Add some spacing between the icon and text
-                        Text(
-                          "Continue with Google",
-                          style: GoogleFonts.poppins(
-                            color: primaryText,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     // _firebaseController.signInWithGoogle();
+                //   },
+                //   child: Container(
+                //     padding: EdgeInsets.all(18),
+                //     width: MediaQuery.of(context).size.width * 0.7,
+                //     decoration: BoxDecoration(
+                //       color: Color(0xff404452),
+                //       borderRadius: BorderRadius.circular(20),
+                //     ),
+                //     margin: EdgeInsets.only(top: 40),
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: [
+                //         SvgPicture.asset(
+                //           Google,
+                //           height: 32,
+                //           width: 32,
+                //         ),
+                //         const SizedBox(
+                //           width: 2,
+                //         ), // Add some spacing between the icon and text
+                //         Text(
+                //           "Continue with Google",
+                //           style: GoogleFonts.poppins(
+                //             color: primaryText,
+                //             fontSize: 16,
+                //             fontWeight: FontWeight.bold,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                 Container(
                   margin: EdgeInsets.all(25),
                   child: GestureDetector(
