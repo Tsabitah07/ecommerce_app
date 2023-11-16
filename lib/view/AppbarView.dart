@@ -7,8 +7,12 @@ import 'package:get/get.dart';
 
 class AppbarView extends StatelessWidget {
   final MyAppBarController myController = Get.put(MyAppBarController());
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final searchContainerWidth = screenWidth > 400 ? 200.0 : 150.0;
+
     return Scaffold(
       appBar: AppBar(
         title: Stack(
@@ -21,6 +25,27 @@ class AppbarView extends StatelessWidget {
                 titleSpacing: 0,
                 title: Row(
                   children: [
+                    Stack(
+                      children: [
+                        Container(
+                          width: searchContainerWidth,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: secondaryColor, // Change color as needed
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        const Positioned(
+                          height: 60,
+                          left: 15,
+                          child: Icon(
+                            Icons.search_rounded,
+                            color: secondaryColor,
+                            size: 40,
+                          ),
+                        ),
+                      ],
+                    ),
                     // CircleAvatar(
                     //   radius: 22,
                     //   backgroundColor: diffgrey,

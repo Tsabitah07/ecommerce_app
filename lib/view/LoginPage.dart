@@ -40,9 +40,7 @@ class LoginPage extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
                 color: commonText,
-                onPressed: () {
-                  Homebase();
-                },
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ),
@@ -67,7 +65,10 @@ class LoginPage extends StatelessWidget {
                 ),
                 inputValue("Username", false),
                 inputValue("Password", true),
-                button("LOGIN", primaryText, primaryColor),
+                InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Homebase())),
+                    child: button("LOGIN", primaryText, primaryColor)),
               ],
             ),
           ),

@@ -495,3 +495,5 @@ final List<Map<String, String>> HOTSALE = [
     "img": "https://media.kohlsimg.com/is/image/kohls/5533230_Black_White_Black?wid=240&hei=240&op_sharpen=1"
   },
 ];
+
+

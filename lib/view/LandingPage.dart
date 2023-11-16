@@ -1,9 +1,11 @@
 // import 'package:ecommerce_app/controller/firebaseController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
+import 'package:ecommerce_app/view/registerPage.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LandingPage extends StatelessWidget {
@@ -45,60 +47,55 @@ class LandingPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(18),
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  decoration: BoxDecoration(
-                    color: Color(0xffC3DDD1),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  margin: EdgeInsets.only(top: 40),
-                  child: Center(
-                    child: Text(
-                      "Sign up free",
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
                 // InkWell(
-                //   onTap: () {
-                //     // _firebaseController.signInWithGoogle();
-                //   },
+                //   onTap: () => Get.to(
+                //       RegisterPage()), // <-- Closing parenthesis added here
                 //   child: Container(
                 //     padding: EdgeInsets.all(18),
                 //     width: MediaQuery.of(context).size.width * 0.7,
                 //     decoration: BoxDecoration(
-                //       color: Color(0xff404452),
+                //       color: Color(0xffC3DDD1),
                 //       borderRadius: BorderRadius.circular(20),
                 //     ),
                 //     margin: EdgeInsets.only(top: 40),
-                //     child: Row(
-                //       mainAxisAlignment: MainAxisAlignment.center,
-                //       children: [
-                //         SvgPicture.asset(
-                //           Google,
-                //           height: 32,
-                //           width: 32,
+                //     child: Center(
+                //       child: Text(
+                //         "Sign up free",
+                //         style: GoogleFonts.poppins(
+                //           color: Colors.black,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
                 //         ),
-                //         const SizedBox(
-                //           width: 2,
-                //         ), // Add some spacing between the icon and text
-                //         Text(
-                //           "Continue with Google",
-                //           style: GoogleFonts.poppins(
-                //             color: primaryText,
-                //             fontSize: 16,
-                //             fontWeight: FontWeight.bold,
-                //           ),
-                //         ),
-                //       ],
+                //       ),
                 //     ),
                 //   ),
                 // ),
+                Container(
+                  margin: EdgeInsets.all(25),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return RegisterPage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: Text(
+                        'Signup for free!',
+                        style: GoogleFonts.poppins(
+                          color: primaryText,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
                 Container(
                   margin: EdgeInsets.all(25),
                   child: GestureDetector(

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RegisterController extends GetxController{
+class RegisterController extends GetxController {
   late TextEditingController emailController = TextEditingController();
   late TextEditingController usernameController = TextEditingController();
   late TextEditingController phoneNumberController = TextEditingController();
@@ -19,7 +19,8 @@ class RegisterController extends GetxController{
   }
 
   Future<void> pickImage() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       imagePath.value = pickedFile.path;
     }
@@ -40,7 +41,7 @@ class RegisterController extends GetxController{
     await prefs.setString('passwordPath', password);
     await prefs.setString('imagePath', imagePath.value);
 
-    Get.off(ProfilePage());
+    Get.off(Homebase());
 
     Get.snackbar("Congrats", "Login Succes");
 
