@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../themes/theme.dart';
 import '../../view/profilePage.dart';
@@ -43,7 +44,7 @@ class Profile extends StatelessWidget {
                       Text(email),
                       SizedBox(height: 5,),
                       InkWell(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage())),
+                          onTap: () => Get.to(ProfilePage()),
                           child: Text("View Profile")
                       )
                     ]

@@ -32,7 +32,7 @@ class RegisterPage extends StatelessWidget {
                       Obx(() => buildImagePreview(controller.imagePath.value, screenWidth * .25)),
                       InkWell(
                         onTap: () => controller.pickImage(),
-                        child: button("Add Image", primaryText, primaryColor),
+                        child: Button("Add Image", primaryText, primaryColor),
                       ),
                     ],
                   )
@@ -79,7 +79,7 @@ class RegisterPage extends StatelessWidget {
                         onTap: () => controller.register(),
                         child: Container(
                           padding: EdgeInsets.all(15),
-                            child: button("REGISTER", primaryColor, primaryText)),
+                            child: Button("REGISTER", primaryColor, primaryText)),
                       )
                     ],
                   ),
