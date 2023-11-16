@@ -7,6 +7,12 @@ class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("My Wallet",
+          style: appBarText,
+        ),
+        backgroundColor: linear2,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/Wallet.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'detailOption.dart';
@@ -24,7 +26,7 @@ class MyWallet extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: (){},
+              onTap: () => Get.to(WalletPage()),
               child: Container(
                   height: 45,
                   margin: EdgeInsets.only(left: 12, right: 12 ,bottom: 5),
