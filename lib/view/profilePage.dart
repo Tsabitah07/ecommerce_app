@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
-import '../widget/profileText.dart';
+import '../widget/profileDisplayedText.dart';
 import '../widget/textInput.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -36,10 +36,10 @@ class ProfilePage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children:[
-                          ProfileText(screenWidth * .7, 'Email : ${controller.strEmail.value}'),
-                          ProfileText(screenWidth * .7, 'Username : ${controller.strUsername.value}'),
-                          ProfileText(screenWidth * .7, 'Phone Number : ${controller.strPhoneNumber.value}'),
-                          ProfileText(screenWidth * .7, 'Password : ${controller.strPassword.value}')
+                          ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
+                          ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
+                          ProfileDisplayedText(screenWidth, 'Phone Number : ${controller.strPhoneNumber.value}'),
+                          ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}')
                         ]
                     )
                 )

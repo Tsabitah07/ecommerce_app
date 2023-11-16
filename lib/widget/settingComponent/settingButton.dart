@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,10 +30,7 @@ class SettingButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(text,
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: settingBtnText
                 ),
                 Icon(icon, color: Colors.black26)
               ],
