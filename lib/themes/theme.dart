@@ -76,7 +76,7 @@ TextStyle MiniImportant({required final color}) {
 
 TextStyle profileDataText = GoogleFonts.poppins(
   textStyle: TextStyle(
-    fontSize: 19,
+    fontSize: 17,
     fontWeight: FontWeight.w500
   )
 );
