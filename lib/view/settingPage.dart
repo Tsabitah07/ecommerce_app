@@ -15,10 +15,7 @@ class SettingPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Setting",
-          style: GoogleFonts.poppins(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: appBarText
         ),
         backgroundColor: linear2,
       ),

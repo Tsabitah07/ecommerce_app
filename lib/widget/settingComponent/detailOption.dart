@@ -12,15 +12,17 @@ class DetailOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 60,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(icon,
               size: 30,
             ),
-            Text(text, style: TextStyle(fontSize: 13),),
+            Text(text,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 13),),
           ],
         ),
     );

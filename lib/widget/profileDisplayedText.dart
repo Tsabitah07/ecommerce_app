@@ -5,7 +5,7 @@ import '../themes/theme.dart';
 Widget ProfileDisplayedText (width, text){
   return Container(
     width: width * .7,
-    height: 60,
+    height: 58,
     padding: EdgeInsets.all(14),
     decoration: BoxDecoration(
         color: primaryText,

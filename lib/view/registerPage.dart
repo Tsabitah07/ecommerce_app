@@ -40,14 +40,19 @@ class RegisterPage extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: InkWell(
               child: Container(
-                margin: EdgeInsets.all(13),
-                padding: EdgeInsets.all(11),
-                decoration:
-                    BoxDecoration(color: primaryText, shape: BoxShape.circle),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: commonText,
-                ),
+                  width: screenWidth,
+                  height: screenHeight * .43,
+                  color: Color(0xff8A83EF),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Obx(() => buildImagePreview(controller.imagePath.value, screenWidth * .25)),
+                      InkWell(
+                        onTap: () => controller.pickImage(),
+                        child: Button("Add Image", primaryText, primaryColor),
+                      ),
+                    ],
+                  )
               ),
             )),
         Align(
@@ -66,25 +71,40 @@ class RegisterPage extends StatelessWidget {
                       style: Header,
                     ),
                   ),
-                  inputValue("Email", false),
-                  inputValue("Username", false),
-                  inputValue("Password", true),
-                  InkWell(
-                    onTap: () => controller.register(),
-                    child: Container(
-                        padding: EdgeInsets.all(15),
-                        child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Homebase()));
-                            },
-                            child:
-                                button("REGISTER", primaryColor, primaryText))),
-                  )
-                ],
-              ),
-            ))
-      ]),
+                )
+            ),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: MediaQuery.of(context).size.height * .61,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: primaryText,
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 19, bottom: 14),
+                        child: Text("Welcome-!!",
+                          style: Header,
+                        ),
+                      ),
+                      inputValue("Email", false),
+                      inputValue("Username", false),
+                      inputValue("Password", true),
+                      InkWell(
+                        onTap: () => controller.register(),
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                            child: Button("REGISTER", primaryColor, primaryText)),
+                      )
+                    ],
+                  ),
+                )
+            )
+          ]
+      ),
     );
   }
 }
