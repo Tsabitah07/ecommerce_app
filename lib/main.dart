@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/DetailProduct.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:ecommerce_app/view/SplashScreen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // theme: customTheme,
       debugShowCheckedModeBanner: false,
-      home: SettingPage(),
+      home: DetailPage(),
     );
   }
 }
