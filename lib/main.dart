@@ -1,5 +1,7 @@
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
+import 'package:ecommerce_app/view/SplashScreen.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
@@ -19,8 +21,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // theme: customTheme,
       debugShowCheckedModeBanner: false,
-      home: SettingPage(),
+      home: Splash(),
     );
   }
 }

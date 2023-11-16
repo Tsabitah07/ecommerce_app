@@ -46,6 +46,11 @@ TextStyle Paragraph({required final color}) {
 }
 
 TextStyle Header = GoogleFonts.poppins(
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
+);
+
+TextStyle loginRegisterHeader = GoogleFonts.poppins(
   textStyle: TextStyle(
       color: commonText,
       fontSize: 31,
@@ -53,9 +58,13 @@ TextStyle Header = GoogleFonts.poppins(
   ),
 );
 
-TextStyle buttonTextStyle = GoogleFonts.poppins(
-    textStyle: TextStyle(
-        fontSize: 17, fontWeight: FontWeight.bold, color: primaryText));
+TextStyle buttonTextStyle ({color}) {
+  return GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: color
+  );
+}
 
 TextStyle MiniImportant({required final color}) {
   return GoogleFonts.poppins(
@@ -65,6 +74,13 @@ TextStyle MiniImportant({required final color}) {
   );
 }
 
+TextStyle profileDataText = GoogleFonts.poppins(
+  textStyle: TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.w500
+  )
+);
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";
@@ -72,3 +88,9 @@ String Google = "assets/images/Google.svg";
 String Access = "assets/images/Accesspng.png";
 String Prot = "assets/images/Prot.png";
 String Trade = "assets/images/Trade.png";
+
+//theme color
+
+ThemeData customTheme = ThemeData(
+  primaryColor: Colors.transparent, // Set your primary color
+);
