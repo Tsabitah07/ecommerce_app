@@ -81,6 +81,13 @@ TextStyle profileDataText = GoogleFonts.poppins(
   )
 );
 
+TextStyle settingBtnText = GoogleFonts.poppins(
+  textStyle: TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+  )
+);
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";

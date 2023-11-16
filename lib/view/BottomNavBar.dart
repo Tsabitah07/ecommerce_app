@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/Sheets.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
+import 'package:ecommerce_app/view/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -24,7 +25,7 @@ class BtmNavBar extends StatelessWidget {
     // Navigator.push(
     //     context, MaterialPageRoute(builder: (context) => RegisterPage()));
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ProfilePage()));
+        context, MaterialPageRoute(builder: (context) => SettingPage()));
   }
 
   @override
