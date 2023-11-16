@@ -88,6 +88,13 @@ TextStyle settingBtnText = GoogleFonts.poppins(
   )
 );
 
+TextStyle appBarText = GoogleFonts.poppins(
+  textStyle: TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  )
+);
+
 //image asset
 
 String RunShop = "assets/images/Reg.svg";
