@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app/themes/imageLists.dart';
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/DetailProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/model/data_model.dart';
 
@@ -36,7 +37,7 @@ class _HompageViewState extends State<HomepageView> {
                     width: searchContainerWidth,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: secondaryColor, // Change color as needed
+                      color: secondaryColor,
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
@@ -74,16 +75,24 @@ class _HompageViewState extends State<HomepageView> {
                       for (var i = 0; i < 3; i++)
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: categoryContainerSize,
-                            width: categoryContainerSize,
-                            decoration: BoxDecoration(
-                              color: primaryColor, // Change color as needed
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    products[i]["product_image"] as String),
-                                fit: BoxFit.cover,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DetailPage()));
+                            },
+                            child: Container(
+                              height: categoryContainerSize,
+                              width: categoryContainerSize,
+                              decoration: BoxDecoration(
+                                color: primaryColor, // Change color as needed
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      products[i]["product_image"] as String),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -96,16 +105,24 @@ class _HompageViewState extends State<HomepageView> {
                       for (var i = 3; i < 6; i++)
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: categoryContainerSize,
-                            width: categoryContainerSize,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    products[i]["product_image"] as String),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DetailPage()));
+                            },
+                            child: Container(
+                              height: categoryContainerSize,
+                              width: categoryContainerSize,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      products[i]["product_image"] as String),
+                                ),
+                                color: primaryColor,
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                              color: primaryColor,
-                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
                         ),
