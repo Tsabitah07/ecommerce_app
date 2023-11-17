@@ -1,168 +1,150 @@
-import 'package:ecommerce_app/model/data_model.dart';
-import 'package:ecommerce_app/themes/theme.dart';
-import 'package:ecommerce_app/view/CheckoutView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ecommerce_app/model/data_model.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  DetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final argument = Get.arguments as Map<String, dynamic>;
+
     return Scaffold(
-      body: ListView(
-        children: [
-          // Image
-          Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: secondaryColor),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0, left: 10),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(15),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Stack(
+                    InkWell(
+                      onTap: () {
+                        // Kembali
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF5F9FD),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xFF475269).withOpacity(0.3),
+                              blurRadius: 5,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 30,
+                          color: Color(0xFF475269),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F9FD),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF475269).withOpacity(0.3),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.favorite,
+                        size: 30,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 15),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.network(
+                      argument["product_image"] as String,
+                      height: 350,
+                      width: 350,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.5,
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF5F9FD),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFF475269).withOpacity(0.5),
+                      blurRadius: 10,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      argument["product_name"] as String,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF475269),
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    Text(
+                      argument["description"] as String,
+                      style: TextStyle(
+                        color: Color(0xFF475269),
+                        fontSize: 17,
+                      ),
+                      textAlign: TextAlign.justify,
+                    ),
+                    SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          height: 45,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: secondaryColor,
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "20IDR",
-                            style: MiniImportant(color: Colors.white),
+                        Text(
+                          "${argument["price"]}",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.redAccent,
                           ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: secondaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          textAlign: TextAlign.left,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Brand",
-                            style: MiniImportant(color: Colors.white),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: secondaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Stock",
-                            style: MiniImportant(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: secondaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Type",
-                            style: MiniImportant(color: Colors.white),
-                          ),
+                        ElevatedButton(
+                          onPressed: () {
+                            //  pembelian
+                          },
+                          child: Text("Buy Now"),
                         ),
                       ],
                     ),
                   ],
                 ),
-              ),
-            ),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0, left: 8.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Product Description",
-                style: MiniImportant(color: secondaryColor),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20, left: 8.0),
-            child: Text(
-              "Customer Rating",
-              style: MiniImportant(color: secondaryColor),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: InkWell(
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CheckoutView()));
-        },
-        child: Stack(
-          children: [
-            Container(
-              height: 60,
-              width: MediaQuery.of(context).size.width * 0.5,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 56.0, top: 16),
-              child: Icon(
-                Icons.shopping_cart,
-                size: 30,
-              ),
-            )
-          ],
         ),
       ),
     );

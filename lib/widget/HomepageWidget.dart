@@ -4,6 +4,7 @@ import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/DetailProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/model/data_model.dart';
+import 'package:get/get.dart';
 
 class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
@@ -77,10 +78,8 @@ class _HompageViewState extends State<HomepageView> {
                           padding: const EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DetailPage()));
+                              Get.to(() => DetailPage(),
+                                  arguments: products[i]);
                             },
                             child: Container(
                               height: categoryContainerSize,
@@ -107,10 +106,8 @@ class _HompageViewState extends State<HomepageView> {
                           padding: const EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DetailPage()));
+                              Get.to(() => DetailPage(),
+                                  arguments: products[i]);
                             },
                             child: Container(
                               height: categoryContainerSize,
@@ -167,7 +164,7 @@ class _HompageViewState extends State<HomepageView> {
                               width: 150,
                               child: Text(
                                 products[i]["product_name"] as String,
-                                style: MiniImportant(color: secondaryColor  ),
+                                style: MiniImportant(color: secondaryColor),
                               ),
                             ),
                             Container(

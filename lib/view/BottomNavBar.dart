@@ -14,20 +14,18 @@ class BtmNavBar extends StatelessWidget {
   // Define the classes to navigate to when icons are clicked
   void _navigateToHome(BuildContext context) {
     // Replace 'HomeClass' with the actual class you want to navigate to
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Homebase()));
+    Get.to(Homebase());
   }
 
   void _navigateToWallet(BuildContext context) {
-    Get.to(WalletPage());
+    Get.off(WalletPage());
   }
 
   void _navigateToProfile(BuildContext context) {
     // Replace 'ProfileClass' with the actual class you want to navigate to
     // Navigator.push(
     //     context, MaterialPageRoute(builder: (context) => RegisterPage()));
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SettingPage()));
+    Get.off(SettingPage());
   }
 
   @override
