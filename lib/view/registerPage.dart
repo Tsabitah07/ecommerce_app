@@ -14,22 +14,28 @@ class RegisterPage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: linear2,
+        title: Text("Register Page",
+          style: appBarText,
+        ),
+      ),
       body: Stack(
         children: [
           Align(
             alignment: Alignment.topCenter,
             child: Container(
               width: screenWidth,
-              height: screenHeight * 0.43,
+              height: screenHeight * 0.32,
               color: const Color(0xff8A83EF),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Obx(() => buildImagePreview(
-                      controller.imagePath.value, screenWidth * 0.25)),
+                  buildImagePreview(
+                      controller.imagePath.value, screenWidth * 0.2),
                   InkWell(
                     onTap: () => controller.pickImage(),
-                    child: Button("Add Image", primaryText, primaryColor),
+                    child: Button("Add Image", primaryText, Colors.black),
                   ),
                 ],
               ),
@@ -38,29 +44,29 @@ class RegisterPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: screenHeight * 0.61,
+              height: screenHeight * 0.59,
               width: screenWidth,
               decoration: BoxDecoration(
                 color: primaryText,
-                borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 19, bottom: 14),
-                    child: Text(
-                      'Welcome-!!',
-                      style: Header,
-                    ),
-                  ),
+                  // Container(
+                  //   margin: const EdgeInsets.only(top: 19, bottom: 10),
+                  //   child: Text(
+                  //     'Welcome-!!',
+                  //     style: Header,
+                  //   ),
+                  // ),
                   inputValue('Email', false),
                   inputValue('Username', false),
                   inputValue('Password', true),
+                  inputValue('Phone Number', true),
                   InkWell(
                     onTap: () => controller.register(),
                     child: Container(
                       padding: const EdgeInsets.all(15),
-                      child: Button('REGISTER', primaryColor, primaryText),
+                      child: Button('REGISTER', linear2, Colors.black),
                     ),
                   ),
                 ],

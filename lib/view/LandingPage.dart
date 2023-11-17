@@ -2,9 +2,11 @@
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
+import 'package:ecommerce_app/widget/navigationButton.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LandingPage extends StatelessWidget {
@@ -12,130 +14,48 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          flex: 5,
-          child: Container(
-            color: primaryColor,
-            child: SvgPicture.asset(
-              RunShop,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+      body: Stack(
+          children: [
+            Container(
+              color: linear2,
+              width: screenWidth, height: screenHeight * .65,
+                child: SvgPicture.asset(RunShop),
             ),
-          ),
-        ),
-        Expanded(
-          flex: 6,
-          child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xff2A2A2A),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(top: 15),
-                  child: Text(
-                    "Let's get started!",
-                    style: GoogleFonts.poppins(
-                      color: primaryText,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(18),
-                  width: MediaQuery.of(context).size.width * 0.7,
+            Align(
+              alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: screenWidth, height: screenHeight * .4,
                   decoration: BoxDecoration(
-                    color: Color(0xffC3DDD1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                    color: primaryText,
                   ),
-                  margin: EdgeInsets.only(top: 40),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => RegisterPage()));
-                    },
-                    child: Center(
-                      child: Text(
-                        "Sign up free",
-                        style: GoogleFonts.poppins(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Welcome",
+                        style: Header,
                       ),
-                    ),
-                  ),
-                ),
-                // InkWell(
-                //   onTap: () {
-                //     // _firebaseController.signInWithGoogle();
-                //   },
-                //   child: Container(
-                //     padding: EdgeInsets.all(18),
-                //     width: MediaQuery.of(context).size.width * 0.7,
-                //     decoration: BoxDecoration(
-                //       color: Color(0xff404452),
-                //       borderRadius: BorderRadius.circular(20),
-                //     ),
-                //     margin: EdgeInsets.only(top: 40),
-                //     child: Row(
-                //       mainAxisAlignment: MainAxisAlignment.center,
-                //       children: [
-                //         SvgPicture.asset(
-                //           Google,
-                //           height: 32,
-                //           width: 32,
-                //         ),
-                //         const SizedBox(
-                //           width: 2,
-                //         ), // Add some spacing between the icon and text
-                //         Text(
-                //           "Continue with Google",
-                //           style: GoogleFonts.poppins(
-                //             color: primaryText,
-                //             fontSize: 16,
-                //             fontWeight: FontWeight.bold,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-                Container(
-                  margin: EdgeInsets.all(25),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LoginPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                      child: Text(
-                        'Login',
-                        style: GoogleFonts.poppins(
-                          color: primaryText,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      InkWell(
+                        onTap: () => Get.off(RegisterPage()),
+                        child: Button("Sign Up Here", linear2, commonText),
                       ),
-                    ),
+                      Text("already have an account",
+                        style: buttonTextStyle(),
+                      ),
+                      InkWell(
+                        onTap: () => Get.off(LoginPage()),
+                        child: Button("Login Here", linear2, commonText),
+                      )
+                    ],
                   ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
+                )
+            )
+          ]
+      ),
     );
   }
 }

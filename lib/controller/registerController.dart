@@ -40,11 +40,9 @@ class RegisterController extends GetxController{
     await prefs.setString('passwordPath', password);
     await prefs.setString('imagePath', imagePath.value);
 
-    Get.off(ProfilePage());
+    Get.off(Homebase());
 
     Get.snackbar("Congrats", "Login Succes");
 
-    // Navigate to the next screen or perform any other action
-    // For example, you can use Get.to(() => NextScreen());
   }
 }
