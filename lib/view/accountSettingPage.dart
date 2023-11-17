@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/LoginPage.dart';
+import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/settingComponent/settingButton.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,10 @@ class AccountSettingPage extends StatelessWidget {
             SettingButton(text: "Account Privacy"),
             SettingButton(text: "Notification"),
             SettingButton(text: "Community"),
-            SettingButton(text: "Information")
+            SettingButton(text: "Information"),
+            InkWell(
+                onTap: () => LoginPage(),
+                child: Button("Logout", Colors.red, Colors.white)),
           ],
         )
       ),

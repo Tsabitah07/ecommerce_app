@@ -29,19 +29,6 @@ class Homebase extends StatelessWidget {
                 child: AppBar(
                   backgroundColor: secondaryColor,
                   elevation: 0,
-                  title: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.menu),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                   actions: [
                     Padding(
                       padding: const EdgeInsets.only(top: 5, left: 0),
