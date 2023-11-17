@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/model/data_model.dart';
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/CheckoutView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -139,24 +140,30 @@ class DetailPage extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: Stack(
-        children: [
-          Container(
-            height: 60,
-            width: MediaQuery.of(context).size.width * 0.5,
-            decoration: BoxDecoration(
-              color: primaryColor,
-              borderRadius: BorderRadius.circular(10),
+      floatingActionButton: InkWell(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CheckoutView()));
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 60,
+              width: MediaQuery.of(context).size.width * 0.5,
+              decoration: BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 56.0, top: 16),
-            child: Icon(
-              Icons.shopping_cart,
-              size: 30,
-            ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 56.0, top: 16),
+              child: Icon(
+                Icons.shopping_cart,
+                size: 30,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

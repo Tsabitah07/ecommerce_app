@@ -146,20 +146,45 @@ class _HompageViewState extends State<HomepageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 6; i < 10; i++)
+                    for (var i = 7; i < 20; i++)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: catalogContainerWidth,
-                          height: 250,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    products[i]["product_image"] as String),
-                                fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(20),
-                            color: primaryColor, // Change color as needed
-                          ),
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: catalogContainerWidth,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        products[i]["product_image"] as String),
+                                    fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(20),
+                                color: primaryColor,
+                              ),
+                            ),
+                            Container(
+                              width: 150,
+                              child: Text(
+                                products[i]["product_name"] as String,
+                                style: MiniImportant(color: secondaryColor  ),
+                              ),
+                            ),
+                            Container(
+                              width: catalogContainerWidth,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                gradient: LinearGradient(
+                                    colors: [
+                                      Color.fromARGB(200, 0, 0, 0),
+                                      Color.fromARGB(50, 0, 0, 0)
+                                    ],
+                                    begin: Alignment.bottomCenter,
+                                    end: Alignment.topCenter),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                   ],

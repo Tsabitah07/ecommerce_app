@@ -11,6 +11,7 @@ class CheckoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65),
         child: Obx(() => Stack(
@@ -114,6 +115,39 @@ class CheckoutView extends StatelessWidget {
               ],
             )),
       ),
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+          ),
+          
+        ],
+      ),
+      // body: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: Align(
+      //     alignment: Alignment.center,
+      //     child: Container(
+      //       width: 180,
+      //       height: 200,
+      //       decoration: BoxDecoration(
+      //         color: primaryColor,
+      //         borderRadius: BorderRadius.circular(10),
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

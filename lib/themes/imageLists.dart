@@ -39,6 +39,6 @@ final List<Widget> imageSliders = HOTSALE.map((item) {
       ),
     );
   } else {
-    return Container(); // or some default behavior
+    return Container(); 
   }
 }).toList();
