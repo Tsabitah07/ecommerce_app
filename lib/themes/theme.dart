@@ -76,7 +76,7 @@ TextStyle MiniImportant({required final color}) {
 
 TextStyle profileDataText = GoogleFonts.poppins(
   textStyle: TextStyle(
-    fontSize: 19,
+    fontSize: 17,
     fontWeight: FontWeight.w500
   )
 );
@@ -85,6 +85,13 @@ TextStyle settingBtnText = GoogleFonts.poppins(
   textStyle: TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w400,
+  )
+);
+
+TextStyle appBarText = GoogleFonts.poppins(
+  textStyle: TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
   )
 );
 
