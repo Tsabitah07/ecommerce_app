@@ -115,7 +115,7 @@ class Homebase extends StatelessWidget {
           return HomepageView();
         },
       ),
-      bottomNavigationBar: BtmNavBar(),
+      bottomNavigationBar: BtmNavBar(initialPage: 0,),
     );
   }
 }

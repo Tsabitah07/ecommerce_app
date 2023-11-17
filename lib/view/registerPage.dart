@@ -20,7 +20,7 @@ class RegisterPage extends StatelessWidget {
           style: appBarText,
         ),
       ),
-      body: Stack(
+      body: Obx(() => Stack(
         children: [
           Align(
             alignment: Alignment.topCenter,
@@ -61,7 +61,7 @@ class RegisterPage extends StatelessWidget {
                   inputValue('Email', false),
                   inputValue('Username', false),
                   inputValue('Password', true),
-                  inputValue('Phone Number', true),
+                  inputValue('Phone Number', false),
                   InkWell(
                     onTap: () => controller.register(),
                     child: Container(
@@ -74,7 +74,7 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ),)
     );
   }
 }

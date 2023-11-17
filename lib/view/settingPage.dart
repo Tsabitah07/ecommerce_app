@@ -45,7 +45,7 @@ class SettingPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BtmNavBar(),
+      bottomNavigationBar: BtmNavBar(initialPage: 2,),
     );
   }
 }
