@@ -1,10 +1,12 @@
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/Sheets.dart';
+import 'package:ecommerce_app/view/Wallet.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:get/get.dart';
 
 class BtmNavBar extends StatelessWidget {
   BtmNavBar({super.key});
@@ -17,7 +19,7 @@ class BtmNavBar extends StatelessWidget {
   }
 
   void _navigateToWallet(BuildContext context) {
-    Wallet.show(context);
+    Get.to(WalletPage());
   }
 
   void _navigateToProfile(BuildContext context) {
@@ -31,8 +33,8 @@ class BtmNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: diffgrey,
-      color: secondaryColor,
+      backgroundColor: linear1,
+      color: linear2,
       onTap: (index) {
         // Navigate to the respective class based on the selected icon
         if (index == 0) {

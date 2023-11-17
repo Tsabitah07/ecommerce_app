@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/BottomNavBar.dart';
 import 'package:ecommerce_app/view/accountSettingPage.dart';
 import 'package:ecommerce_app/view/helpAssistantPage.dart';
 import 'package:ecommerce_app/view/privacyPolicyPage.dart';
@@ -44,6 +45,7 @@ class SettingPage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BtmNavBar(),
     );
   }
 }

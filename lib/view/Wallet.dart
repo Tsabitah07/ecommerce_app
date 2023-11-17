@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/BottomNavBar.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/navigationButton.dart';
@@ -25,9 +26,6 @@ class WalletPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Payment Method",
-                style: Header,
-              ),
               InkWell(
                 onTap: (){},
                 child: Button("Add Payment", linear2, Colors.black)
@@ -36,6 +34,7 @@ class WalletPage extends StatelessWidget {
           ),
         )
       ),
+      bottomNavigationBar: BtmNavBar(),
     );
   }
 }

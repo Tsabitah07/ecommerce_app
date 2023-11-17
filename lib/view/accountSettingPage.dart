@@ -18,6 +18,10 @@ class AccountSettingPage extends StatelessWidget {
         child: Column(
           children: [
             SettingButton(text: "Edit Profile"),
+            SettingButton(text: "Account Privacy"),
+            SettingButton(text: "Notification"),
+            SettingButton(text: "Community"),
+            SettingButton(text: "Information")
           ],
         )
       ),
