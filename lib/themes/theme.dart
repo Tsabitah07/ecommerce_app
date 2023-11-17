@@ -51,19 +51,18 @@ TextStyle Header = GoogleFonts.poppins(
 );
 
 TextStyle loginRegisterHeader = GoogleFonts.poppins(
-  textStyle: TextStyle(
-      color: commonText,
-      fontSize: 31,
-      fontWeight: FontWeight.bold
-  ),
+  textStyle:
+      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
 
-TextStyle buttonTextStyle ({color}) {
+TextStyle buttonTextStyle({color}) {
   return GoogleFonts.poppins(
+
       fontSize: 16,
       fontWeight: FontWeight.bold,
       color: color
   );
+
 }
 
 TextStyle MiniImportant({required final color}) {
@@ -75,25 +74,19 @@ TextStyle MiniImportant({required final color}) {
 }
 
 TextStyle profileDataText = GoogleFonts.poppins(
-  textStyle: TextStyle(
-    fontSize: 17,
-    fontWeight: FontWeight.w500
-  )
-);
+    textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500));
 
 TextStyle settingBtnText = GoogleFonts.poppins(
-  textStyle: TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w400,
-  )
-);
+    textStyle: TextStyle(
+  fontSize: 15,
+  fontWeight: FontWeight.w400,
+));
 
 TextStyle appBarText = GoogleFonts.poppins(
-  textStyle: TextStyle(
-    color: Colors.black,
-    fontWeight: FontWeight.bold,
-  )
-);
+    textStyle: TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+));
 
 //image asset
 
@@ -102,6 +95,7 @@ String Google = "assets/images/Google.svg";
 String Access = "assets/images/Accesspng.png";
 String Prot = "assets/images/Prot.png";
 String Trade = "assets/images/Trade.png";
+String SplashImg = "assets/images/Shopify.png";
 
 //theme color
 
