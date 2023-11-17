@@ -57,7 +57,12 @@ TextStyle loginRegisterHeader = GoogleFonts.poppins(
 
 TextStyle buttonTextStyle({color}) {
   return GoogleFonts.poppins(
-      fontSize: 14, fontWeight: FontWeight.bold, color: color);
+
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: color
+  );
+
 }
 
 TextStyle MiniImportant({required final color}) {

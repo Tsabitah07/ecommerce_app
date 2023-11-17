@@ -27,24 +27,22 @@ class RegisterController extends GetxController{
 
   Future<void> register() async {
     // Implement your registration logic here
-    String email = usernameController.text;
-    String username = passwordController.text;
-    String phoneNumber = passwordController.text;
-    String password = passwordController.text;
+    String emailPath = usernameController.value.text;
+    String usernamePath = passwordController.value.text;
+    String phoneNumberPath = passwordController.value.text;
+    String passwordPath = passwordController.value.text;
 
     // Save user information to SharedPreferences
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('emailPath', email);
-    await prefs.setString('usernamePath', username);
-    await prefs.setString('phoneNumberPath', phoneNumber);
-    await prefs.setString('passwordPath', password);
+    await prefs.setString('emailPath', emailPath);
+    await prefs.setString('usernamePath', usernamePath);
+    await prefs.setString('phoneNumberPath', phoneNumberPath);
+    await prefs.setString('passwordPath', passwordPath);
     await prefs.setString('imagePath', imagePath.value);
 
-    Get.off(ProfilePage());
+    Get.off(Homebase());
 
     Get.snackbar("Congrats", "Login Succes");
 
-    // Navigate to the next screen or perform any other action
-    // For example, you can use Get.to(() => NextScreen());
   }
 }
