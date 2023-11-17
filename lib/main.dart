@@ -2,6 +2,7 @@ import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:ecommerce_app/view/SplashScreen.dart';
+import 'package:ecommerce_app/view/checkoutPage.dart';
 import 'package:ecommerce_app/view/orderPage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // theme: customTheme,
       debugShowCheckedModeBanner: false,
-      home: SettingPage(),
+      home: CheckoutPage(),
     );
   }
 }
