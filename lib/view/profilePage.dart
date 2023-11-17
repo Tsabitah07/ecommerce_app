@@ -22,33 +22,33 @@ class ProfilePage extends StatelessWidget {
         ),
         backgroundColor: linear2,
       ),
-      body: SingleChildScrollView(
+      body: Obx(() => SingleChildScrollView(
         child: Container(
           width: screenWidth,
-            child: Column(
-              children: [
-                Obx(() => buildImagePreview(controller.strImage.value, screenWidth * .35)),
-                Container(
+          child: Column(
+            children: [
+              buildImagePreview(controller.strImage.value, screenWidth * .35),
+              Container(
                   width: screenWidth * .83,
                   height: screenHeight * .55,
                   decoration: BoxDecoration(
                     // color: commonText,
-                    borderRadius: BorderRadius.circular(23)
+                      borderRadius: BorderRadius.circular(23)
                   ),
-                    child: Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:[
-                          ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
-                          ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
-                          ProfileDisplayedText(screenWidth, 'Phone Number : ${controller.strPhoneNumber.value}'),
-                          ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}')
-                        ]
-                    )
-                )
-              ],
-            ),
+                      children:[
+                        ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
+                        ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
+                        ProfileDisplayedText(screenWidth, 'Phone Number : ${controller.strPhoneNumber.value}'),
+                        ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}'),
+                      ]
+                  )
+              )
+            ],
+          ),
         ),
-      ),
+      ),)
     );
   }
 }
