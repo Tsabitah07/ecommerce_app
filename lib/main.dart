@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // theme: customTheme,
       debugShowCheckedModeBanner: false,
-      home: DetailPage(),
+      home: Homebase(),
     );
   }
 }
