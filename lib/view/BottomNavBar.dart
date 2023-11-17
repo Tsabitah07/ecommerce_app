@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class BtmNavBar extends StatelessWidget {
   BtmNavBar({super.key});
