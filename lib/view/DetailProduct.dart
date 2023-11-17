@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/view/CheckoutView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/model/data_model.dart';
@@ -134,7 +135,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            //  pembelian
+                            Get.to(CheckoutView());
                           },
                           child: Text("Buy Now"),
                         ),
