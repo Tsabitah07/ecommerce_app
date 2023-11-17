@@ -1,6 +1,7 @@
 // import 'package:ecommerce_app/controller/firebaseController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
+import 'package:ecommerce_app/view/registerPage.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -53,13 +54,19 @@ class LandingPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   margin: EdgeInsets.only(top: 40),
-                  child: Center(
-                    child: Text(
-                      "Sign up free",
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => RegisterPage()));
+                    },
+                    child: Center(
+                      child: Text(
+                        "Sign up free",
+                        style: GoogleFonts.poppins(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
