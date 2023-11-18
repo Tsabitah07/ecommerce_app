@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
-import '../widget/profileText.dart';
+import '../widget/profileDisplayedText.dart';
 import '../widget/textInput.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -17,36 +17,38 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile Page"),
-        backgroundColor: primaryColor,
+        title: Text("Profile Page",
+          style: appBarText,
+        ),
+        backgroundColor: linear2,
       ),
-      body: SingleChildScrollView(
+      body: Obx(() => SingleChildScrollView(
         child: Container(
           width: screenWidth,
-            child: Column(
-              children: [
-                Obx(() => buildImagePreview(controller.strImage.value, screenWidth * .35)),
-                Container(
+          child: Column(
+            children: [
+              buildImagePreview(controller.strImage.value, screenWidth * .35),
+              Container(
                   width: screenWidth * .83,
                   height: screenHeight * .55,
                   decoration: BoxDecoration(
                     // color: commonText,
-                    borderRadius: BorderRadius.circular(23)
+                      borderRadius: BorderRadius.circular(23)
                   ),
-                    child: Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:[
-                          ProfileText(screenWidth * .7, 'Email : ${controller.strEmail.value}'),
-                          ProfileText(screenWidth * .7, 'Username : ${controller.strUsername.value}'),
-                          ProfileText(screenWidth * .7, 'Phone Number : ${controller.strPhoneNumber.value}'),
-                          ProfileText(screenWidth * .7, 'Password : ${controller.strPassword.value}')
-                        ]
-                    )
-                )
-              ],
-            ),
+                      children:[
+                        ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
+                        ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
+                        ProfileDisplayedText(screenWidth, 'Phone Number : ${controller.strPhoneNumber.value}'),
+                        ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}'),
+                      ]
+                  )
+              )
+            ],
+          ),
         ),
-      ),
+      ),)
     );
   }
 }

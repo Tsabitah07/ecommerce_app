@@ -30,7 +30,7 @@ final List<Widget> imageSliders = HOTSALE.map((item) {
                   padding: const EdgeInsets.symmetric(
                       vertical: 10.0, horizontal: 20.0),
                   child: Text(item["name"]!,
-                      style: MiniImportant(color: secondaryColor)),
+                      style: MiniImportant(color: Colors.white)),
                 ),
               ),
             ],
@@ -39,6 +39,6 @@ final List<Widget> imageSliders = HOTSALE.map((item) {
       ),
     );
   } else {
-    return Container(); // or some default behavior
+    return Container();
   }
 }).toList();

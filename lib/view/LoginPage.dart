@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
-            color: Color(0xff8A83EF),
+            color: linear2,
             child: SvgPicture.asset(
               'assets/images/Reg.svg',
               width: MediaQuery.of(context).size.width,
@@ -38,10 +38,9 @@ class LoginPage extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: IconButton(
-                icon: Icon(Icons.arrow_back),
-                color: commonText,
-                onPressed: () => Navigator.pop(context),
-              ),
+                  icon: Icon(Icons.arrow_back),
+                  color: commonText,
+                  onPressed: () => Get.back()),
             ),
           ),
         ),
@@ -66,9 +65,8 @@ class LoginPage extends StatelessWidget {
                 inputValue("Username", false),
                 inputValue("Password", true),
                 InkWell(
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Homebase())),
-                    child: button("LOGIN", primaryText, primaryColor)),
+                    onTap: () => Get.off(Homebase()),
+                    child: Button("LOGIN", primaryText, Colors.black)),
               ],
             ),
           ),

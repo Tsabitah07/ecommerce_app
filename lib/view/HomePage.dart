@@ -61,25 +61,9 @@ class Homebase extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            // CircleAvatar(
-                            //   radius: 22,
-                            //   backgroundColor: diffgrey,
-                            // ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Hello ,',
-                                    style: Paragraph(color: secondaryColor)),
-                                Text(
-                                  'Wir',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: figmaFontsize(20),
-                                    height: 1.2,
-                                    fontWeight: FontWeight.w600,
-                                    color: primaryColor,
-                                  ),
-                                ),
-                              ],
+                            CircleAvatar(
+                              radius: 22,
+                              backgroundColor: diffgrey,
                             ),
                           ],
                         ),
@@ -115,7 +99,7 @@ class Homebase extends StatelessWidget {
           return HomepageView();
         },
       ),
-      bottomNavigationBar: BtmNavBar(),
+      bottomNavigationBar: BtmNavBar(initialPage: 0,),
     );
   }
 }

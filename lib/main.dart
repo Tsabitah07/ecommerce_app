@@ -1,10 +1,15 @@
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/DetailProduct.dart';
+import 'package:ecommerce_app/view/LandingPage.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/view/OnBoardingPage.dart';
 import 'package:ecommerce_app/view/SplashScreen.dart';
+import 'package:ecommerce_app/view/checkoutPage.dart';
+import 'package:ecommerce_app/view/orderPage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
+import 'package:ecommerce_app/view/settingPage.dart';
 import 'package:ecommerce_app/widget/addPaymentMethod.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,6 +28,7 @@ class MyApp extends StatelessWidget {
       // theme: customTheme,
       debugShowCheckedModeBanner: false,
       home: Splash(),
+
     );
   }
 }

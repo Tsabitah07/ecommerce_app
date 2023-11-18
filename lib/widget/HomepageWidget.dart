@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app/themes/imageLists.dart';
 import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/view/DetailProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/model/data_model.dart';
+import 'package:get/get.dart';
 
 class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
@@ -29,40 +31,36 @@ class _HompageViewState extends State<HomepageView> {
             const SizedBox(
               height: 60,
             ),
-            // Center(
-            //   // child: Stack(
-            //   //   children: [
-            //   //     Container(
-            //   //       width: searchContainerWidth,
-            //   //       height: 60,
-            //   //       decoration: BoxDecoration(
-            //   //         color: secondaryColor, // Change color as needed
-            //   //         borderRadius: BorderRadius.circular(20),
-            //   //       ),
-            //   //     ),
-            //   //     const Positioned(
-            //   //       height: 60,
-            //   //       left: 15,
-            //   //       child: Icon(
-            //   //         Icons.search_rounded,
-            //   //         color: Colors.white,
-            //   //         size: 40,
-            //   //       ),
-            //   //     ),
-            //   //   ],
-            //   // ),
-            // ),
+            Center(
+              child: Stack(
+                children: [
+                  Container(
+                    width: searchContainerWidth,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  const Positioned(
+                    height: 60,
+                    left: 15,
+                    child: Icon(
+                      Icons.search_rounded,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Category's",
-                  style: Headers(color: secondaryColor),
-                ),
+            Center(
+              child: Text(
+                "Category's",
+                style: Headers(color: secondaryColor),
               ),
             ),
             SizedBox(
@@ -78,12 +76,23 @@ class _HompageViewState extends State<HomepageView> {
                       for (var i = 0; i < 3; i++)
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: categoryContainerSize,
-                            width: categoryContainerSize,
-                            decoration: BoxDecoration(
-                              color: primaryColor,
-                              borderRadius: BorderRadius.circular(20),
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(() => DetailPage(),
+                                  arguments: products[i]);
+                            },
+                            child: Container(
+                              height: categoryContainerSize,
+                              width: categoryContainerSize,
+                              decoration: BoxDecoration(
+                                color: primaryColor, // Change color as needed
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      products[i]["product_image"] as String),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -95,12 +104,22 @@ class _HompageViewState extends State<HomepageView> {
                       for (var i = 3; i < 6; i++)
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: categoryContainerSize,
-                            width: categoryContainerSize,
-                            decoration: BoxDecoration(
-                              color: primaryColor,
-                              borderRadius: BorderRadius.circular(20),
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(() => DetailPage(),
+                                  arguments: products[i]);
+                            },
+                            child: Container(
+                              height: categoryContainerSize,
+                              width: categoryContainerSize,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      products[i]["product_image"] as String),
+                                ),
+                                color: primaryColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                             ),
                           ),
                         ),
@@ -114,15 +133,8 @@ class _HompageViewState extends State<HomepageView> {
             ),
             SizedBox(
               height: 60,
-              child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Catalog",
-                    style: Headers(color: secondaryColor),
-                  ),
-                ),
+              child: Center(
+                child: Text("Catalog", style: Headers(color: secondaryColor)),
               ),
             ),
             Center(
@@ -131,19 +143,55 @@ class _HompageViewState extends State<HomepageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 7; i < 21; i++)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: catalogContainerWidth,
-                          height: 250,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    products[i]["product_image"] as String),
-                                fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(20),
-                            color: primaryColor, // Change color as needed
+                    for (var i = 7; i < 20; i++)
+                      InkWell(
+                        onTap: () {
+                          Get.to(DetailPage(), arguments: products[i]);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Stack(
+                            children: [
+                              Container(
+                                width: catalogContainerWidth,
+                                height: 250,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(products[i]
+                                          ["product_image"] as String),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: primaryColor,
+                                ),
+                              ),
+                              Container(
+                                width: catalogContainerWidth,
+                                height: 250,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(120, 0, 0, 0),
+                                        Color.fromARGB(0, 0, 0, 0)
+                                      ],
+                                      begin: Alignment.bottomCenter,
+                                      end: Alignment.topCenter),
+                                ),
+                              ),
+                              Container(
+                                width: catalogContainerWidth,
+                                height: 250,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding:
+                                    const EdgeInsets.only(top: 180, left: 10),
+                                child: Text(
+                                  products[i]["product_name"] as String,
+                                  style: MiniImportant(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

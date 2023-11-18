@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../themes/theme.dart';
 
-Widget ProfileText (width, text){
+Widget ProfileDisplayedText (width, text){
   return Container(
-    width: width,
-    height: 60,
+    width: width * .7,
+    height: 58,
     padding: EdgeInsets.all(14),
     decoration: BoxDecoration(
         color: primaryText,
