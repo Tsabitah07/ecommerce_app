@@ -33,10 +33,6 @@ dependencies:
   google_fonts: 
   flutter_svg: ^2.0.7
   get:
-  google_sign_in: ^6.1.5
-  firebase_core: 
-  firebase_auth: 
-  cloud_firestore:
   image_picker:
   permission_handler:
   shared_preferences: ^2.2.2

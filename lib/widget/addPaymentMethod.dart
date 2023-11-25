@@ -40,11 +40,11 @@ class AddPaymentMethod extends StatelessWidget {
                       ],
                     )
             )),
-            inputValue(
-              "bank Name", false),
-            inputValue("expiry Date", false),
-            inputValue("card Holder Name", false),
-            inputValue("cvv Code", true),
+            // inputValue(
+            //   "bank Name", false),
+            // inputValue("expiry Date", false),
+            // inputValue("card Holder Name", false),
+            // inputValue("cvv Code", true),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog

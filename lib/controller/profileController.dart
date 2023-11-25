@@ -5,7 +5,6 @@ class ProfileController extends GetxController{
   late final SharedPreferences prefs;
   RxString strEmail = "".obs;
   RxString strUsername = "".obs;
-  RxString strPhoneNumber = "".obs;
   RxString strPassword = "".obs;
   RxString strImage = "".obs;
 
@@ -15,13 +14,16 @@ class ProfileController extends GetxController{
     checkSharedPreference();
   }
 
-  void checkSharedPreference() async{
-    prefs = await SharedPreferences.getInstance();
-    strEmail.value = prefs.getString('emailPath') ?? "";
-    strUsername.value = prefs.getString('usernamePath') ?? "";
-    strPhoneNumber.value = prefs.getString('phoneNumberPath') ?? "";
-    strPassword.value = prefs.getString('passwordPath') ?? "";
+  Future<void> checkSharedPreference() async{
+    try{
+      prefs = await SharedPreferences.getInstance();
+      strEmail.value = prefs.getString('email') ?? "no data";
+      strUsername.value = prefs.getString('username') ?? "no data";
+      strPassword.value = prefs.getString('password') ?? "no data";
 
-    strImage.value = prefs.getString('imagePath') ?? '';
+      strImage.value = prefs.getString('imagePath') ?? 'no data';
+    } catch (e) {
+      print('Error initializing SharedPreferences: $e');
+    }
   }
 }

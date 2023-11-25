@@ -40,7 +40,6 @@ class ProfilePage extends StatelessWidget {
                       children:[
                         ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
                         ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
-                        ProfileDisplayedText(screenWidth, 'Phone Number : ${controller.strPhoneNumber.value}'),
                         ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}'),
                       ]
                   )
