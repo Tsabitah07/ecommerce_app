@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/controller/SpalshScreenController.dart';
 import 'package:get/get.dart';
@@ -7,8 +8,11 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Icon(Icons.spatial_audio_sharp),
+        child: Image.asset(
+          SplashImg,
+        ),
       ),
     );
   }

@@ -9,6 +9,7 @@ class RegisterController extends GetxController{
   late TextEditingController usernameController;
   late TextEditingController phoneNumberController;
   late TextEditingController passwordController;
+
   late RxString imagePath;
 
   @override
@@ -21,7 +22,8 @@ class RegisterController extends GetxController{
   }
 
   Future<void> pickImage() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       imagePath.value = pickedFile.path;
     }

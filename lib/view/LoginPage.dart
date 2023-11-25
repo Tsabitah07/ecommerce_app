@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                 // inputValue("Username", false),
                 // inputValue("Password", true),
                 InkWell(
-                  onTap: () => Get.off(Homebase()),
+                    onTap: () => Get.off(Homebase()),
                     child: Button("LOGIN", primaryText, Colors.black)),
               ],
             ),

@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 class BtmNavBar extends StatelessWidget {
   final initialPage;
 
+
   BtmNavBar({
     required this.initialPage
   });

@@ -1,13 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce_app/controller/DetailController.dart';
 import 'package:ecommerce_app/model/data_model.dart';
+import 'package:ecommerce_app/view/checkoutPage.dart';
+import 'package:flutter/material.dart';
+import 'Sheets.dart';
+import 'package:get/get.dart';
 
 class DetailPage extends StatelessWidget {
   DetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final argument = Get.arguments as Map<String, dynamic>;
+    final argument = Get.arguments as Map<String, dynamic>? ?? {};
+
+    final DetailController controller = Get.put(DetailController());
 
     return Scaffold(
       body: SafeArea(
@@ -44,23 +49,42 @@ class DetailPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFF5F9FD),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xFF475269).withOpacity(0.3),
-                            blurRadius: 5,
-                            spreadRadius: 1,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.favorite,
-                        size: 30,
-                        color: Colors.grey,
+                    InkWell(
+                      onTap: () {
+                        // Toggle product in wishlist
+                        Product product = Product(
+                          productName: argument["product_name"] as String,
+                          productImage: argument["product_image"] as String,
+                          description: argument["description"] as String,
+                          price: argument["price"] as double,
+                          brand: argument["brand"],
+                          productType: argument["product_type"],
+                          productSize: argument["product_size"],
+                          stock: argument["stock"],
+                        );
+                        controller.toggleWishlist(product);
+
+                        // Show wishlist modal
+                        Wishlist.show(context);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF5F9FD),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xFF475269).withOpacity(0.3),
+                              blurRadius: 5,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.favorite,
+                          size: 30,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
                   ],
@@ -134,7 +158,18 @@ class DetailPage extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            //  pembelian
+                            Product product = Product(
+                              productName: argument["product_name"] as String,
+                              productImage: argument["product_image"] as String,
+                              description: argument["description"] as String,
+                              price: argument["price"] as double,
+                              brand: argument["brand"],
+                              productType: argument["product_type"],
+                              productSize: argument["product_size"],
+                              stock: argument["stock"],
+                            );
+                            controller.addToProductList(product);
+                            Get.to(CheckoutPage());
                           },
                           child: Text("Buy Now"),
                         ),

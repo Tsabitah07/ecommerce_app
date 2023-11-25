@@ -57,33 +57,6 @@ class Homebase extends StatelessWidget {
                     child: AppBar(
                       backgroundColor: Colors.white,
                       elevation: 0,
-                      title: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            // CircleAvatar(
-                            //   radius: 22,
-                            //   backgroundColor: diffgrey,
-                            // ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Hello ,',
-                                    style: Paragraph(color: secondaryColor)),
-                                Text(
-                                  'Wir',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: figmaFontsize(20),
-                                    height: 1.2,
-                                    fontWeight: FontWeight.w600,
-                                    color: primaryColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
                       actions: [
                         Padding(
                           padding: const EdgeInsets.only(top: 5, right: 0),
@@ -115,7 +88,9 @@ class Homebase extends StatelessWidget {
           return HomepageView();
         },
       ),
-      bottomNavigationBar: BtmNavBar(initialPage: 0,),
+      bottomNavigationBar: BtmNavBar(
+        initialPage: 0,
+      ),
     );
   }
 }
