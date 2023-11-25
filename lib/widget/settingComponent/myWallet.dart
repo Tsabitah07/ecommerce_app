@@ -71,7 +71,7 @@ class MyWallet extends StatelessWidget {
                         DetailOption(icon: Icons.add_circle_outline, text: "Top Up",),
                         DetailOption(icon: Icons.qr_code_scanner, text: "Payment",),
                         DetailOption(icon: Icons.account_balance_wallet, text: "Transfer",),
-                        DetailOption(icon: Icons.wallet_outlined, text: "Connected \nWallet",),
+                        DetailOption(icon: Icons.wallet_outlined, text: "My Wallet",),
                       ],
                     ),
                   ],
