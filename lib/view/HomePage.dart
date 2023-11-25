@@ -57,17 +57,6 @@ class Homebase extends StatelessWidget {
                     child: AppBar(
                       backgroundColor: Colors.white,
                       elevation: 0,
-                      title: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 22,
-                              backgroundColor: diffgrey,
-                            ),
-                          ],
-                        ),
-                      ),
                       actions: [
                         Padding(
                           padding: const EdgeInsets.only(top: 5, right: 0),
@@ -99,7 +88,9 @@ class Homebase extends StatelessWidget {
           return HomepageView();
         },
       ),
-      bottomNavigationBar: BtmNavBar(initialPage: 0,),
+      bottomNavigationBar: BtmNavBar(
+        initialPage: 0,
+      ),
     );
   }
 }

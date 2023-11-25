@@ -10,7 +10,8 @@ class HelpAssistantPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: linear2,
-        title: Text("Help Assistant",
+        title: Text(
+          "Help Assistant",
           style: appBarText,
         ),
       ),
@@ -18,7 +19,7 @@ class HelpAssistantPage extends StatelessWidget {
         children: [
           SettingButton(text: "How do i change my payment method?"),
           SettingButton(text: "Why is my transaction failed?"),
-          SettingButton(text: "Why my card can't be connected with the app?"),
+          SettingButton(text: "Why my card can't be connected?"),
           SettingButton(text: "How do i start selling my product?"),
           SettingButton(text: "Another problem? Report Here")
         ],
