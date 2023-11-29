@@ -6,9 +6,9 @@ final List<Widget> imageSliders = HOTSALE.map((item) {
   if (item["img"] != null && item["name"] != null) {
     return Container(
       child: Container(
-        margin: EdgeInsets.all(5.0),
+        margin: const EdgeInsets.all(5.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
           child: Stack(
             children: <Widget>[
               Image.network(item["img"]!, fit: BoxFit.cover, width: 1000.0),

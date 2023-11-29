@@ -2,7 +2,6 @@ import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/Wallet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'detailOption.dart';
 
@@ -10,7 +9,7 @@ class MyWallet extends StatelessWidget {
   final icon;
   final headerText;
 
-  const MyWallet({
+   MyWallet({super.key, 
     required this.icon,
     required this.headerText
   });
@@ -19,19 +18,19 @@ class MyWallet extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
         width: screenWidth, height: 175,
         // color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => Get.to(WalletPage()),
+              onTap: () => Get.to( WalletPage()),
               child: Container(
                   height: 45,
-                  margin: EdgeInsets.only(left: 12, right: 12 ,bottom: 5),
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
+                  margin:  EdgeInsets.only(left: 12, right: 12 ,bottom: 5),
+                  padding:  EdgeInsets.symmetric(horizontal: 10),
+                  decoration:  BoxDecoration(
                       color: Colors.white70,
                       borderRadius: BorderRadius.vertical(top: Radius.circular(7))
                   ),
@@ -44,7 +43,7 @@ class MyWallet extends StatelessWidget {
                           Icon(icon,
                             size: 30,
                           ),
-                          SizedBox(width: 7,),
+                           SizedBox(width: 7,),
                           Text(headerText,
                             style: settingBtnText
                           ),
@@ -55,14 +54,14 @@ class MyWallet extends StatelessWidget {
               ),
             ),
             Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(horizontal: 12),
+                padding:  EdgeInsets.all(10),
+                margin:  EdgeInsets.symmetric(horizontal: 12),
                 height: 90,
-                decoration: BoxDecoration(
+                decoration:  BoxDecoration(
                     color: Colors.white70,
                     borderRadius: BorderRadius.vertical(bottom: Radius.circular(7))
                 ),
-                child: Column(
+                child:  Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(

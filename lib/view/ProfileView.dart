@@ -14,7 +14,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(65),
+        preferredSize: const Size.fromHeight(65),
         child: Obx(
           () => Stack(
             alignment: AlignmentDirectional.centerStart,

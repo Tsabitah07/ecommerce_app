@@ -8,7 +8,7 @@ class Profile extends StatelessWidget {
   final username;
   final email;
 
-  const Profile({
+   Profile({super.key, 
     required this.username,
     required this.email
 });
@@ -17,7 +17,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
         width: screenWidth, height: 185,
         // color: Colors.black,
         child: Row(
@@ -25,12 +25,12 @@ class Profile extends StatelessWidget {
           children: [
             Container(
               height: 120, width: 120,
-              decoration: BoxDecoration(
+              decoration:  BoxDecoration(
                 shape: BoxShape.circle,
                 color: linear2,
               ),
             ),
-            Container(
+            SizedBox(
                 width: screenWidth * .55, height: 125,
                 // color: Colors.white,
                 child: Column(
@@ -40,12 +40,12 @@ class Profile extends StatelessWidget {
                       Text(username,
                         style: finance(color: Colors.black),
                       ),
-                      SizedBox(height: 10,),
+                       SizedBox(height: 10,),
                       Text(email),
-                      SizedBox(height: 5,),
+                       SizedBox(height: 5,),
                       InkWell(
-                          onTap: () => Get.to(ProfilePage()),
-                          child: Text("View Profile")
+                          onTap: () => Get.to( ProfilePage()),
+                          child:  Text("View Profile")
                       )
                     ]
                 )

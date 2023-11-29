@@ -7,7 +7,7 @@ import 'package:ecommerce_app/model/data_model.dart';
 import 'package:get/get.dart';
 
 class HomepageView extends StatefulWidget {
-  const HomepageView({super.key});
+   HomepageView({super.key});
 
   @override
   State<HomepageView> createState() => _HompageViewState();
@@ -19,7 +19,7 @@ class _HompageViewState extends State<HomepageView> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    // Define responsive constants
+    // Define responsive ants
     final searchContainerWidth = screenWidth > 600 ? 400.0 : 300.0;
     final categoryContainerSize = screenWidth > 600 ? 120.0 : 80.0;
     final catalogContainerWidth = screenWidth > 500 ? 220.0 : 180.0;
@@ -28,7 +28,7 @@ class _HompageViewState extends State<HomepageView> {
       children: [
         Column(
           children: [
-            const SizedBox(
+             SizedBox(
               height: 60,
             ),
             Center(
@@ -42,7 +42,7 @@ class _HompageViewState extends State<HomepageView> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  const Positioned(
+                   Positioned(
                     height: 60,
                     left: 15,
                     child: Icon(
@@ -54,11 +54,11 @@ class _HompageViewState extends State<HomepageView> {
                 ],
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+              padding:  EdgeInsets.only(left: 10.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -67,7 +67,7 @@ class _HompageViewState extends State<HomepageView> {
                 ),
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 30,
             ),
             // Adjust category containers
@@ -79,10 +79,10 @@ class _HompageViewState extends State<HomepageView> {
                     children: [
                       for (var i = 0; i < 3; i++)
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Get.to(() => DetailPage(),
+                              Get.to(() =>  DetailPage(),
                                   arguments: products[i]);
                             },
                             child: Container(
@@ -107,10 +107,10 @@ class _HompageViewState extends State<HomepageView> {
                     children: [
                       for (var i = 3; i < 6; i++)
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Get.to(() => DetailPage(),
+                              Get.to(() =>  DetailPage(),
                                   arguments: products[i]);
                             },
                             child: Container(
@@ -132,13 +132,13 @@ class _HompageViewState extends State<HomepageView> {
                 ],
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 60,
             ),
             SizedBox(
               height: 60,
               child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding:  EdgeInsets.only(left: 20.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -157,10 +157,10 @@ class _HompageViewState extends State<HomepageView> {
                     for (var i = 7; i < 20; i++)
                       InkWell(
                         onTap: () {
-                          Get.to(DetailPage(), arguments: products[i]);
+                          Get.to( DetailPage(), arguments: products[i]);
                         },
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0),
                           child: Stack(
                             children: [
                               Container(
@@ -180,7 +180,7 @@ class _HompageViewState extends State<HomepageView> {
                                 height: 250,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  gradient: LinearGradient(
+                                  gradient:  LinearGradient(
                                       colors: [
                                         Color.fromARGB(120, 0, 0, 0),
                                         Color.fromARGB(0, 0, 0, 0)
@@ -196,7 +196,7 @@ class _HompageViewState extends State<HomepageView> {
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 padding:
-                                    const EdgeInsets.only(top: 180, left: 10),
+                                     EdgeInsets.only(top: 180, left: 10),
                                 child: Text(
                                   products[i]["product_name"] as String,
                                   style: MiniImportant(color: Colors.white),
@@ -210,11 +210,11 @@ class _HompageViewState extends State<HomepageView> {
                 ),
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 60,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 10.0),
+              padding:  EdgeInsets.only(left: 10.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -223,7 +223,7 @@ class _HompageViewState extends State<HomepageView> {
                 ),
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 30,
             ),
             Stack(children: [
@@ -236,7 +236,7 @@ class _HompageViewState extends State<HomepageView> {
                 ),
               ),
             ]),
-            SizedBox(
+             SizedBox(
               height: 60,
             )
           ],

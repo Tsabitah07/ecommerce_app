@@ -9,7 +9,7 @@ class Wishlist {
           return Container(
             height: 650,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: secondaryColor,
             ),
             child: Column(

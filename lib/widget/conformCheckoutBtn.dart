@@ -9,7 +9,7 @@ class ConfirmCheckoutBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 75,
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       color: linear2,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

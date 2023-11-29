@@ -1,8 +1,6 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
-import 'package:ecommerce_app/view/Sheets.dart';
 import 'package:ecommerce_app/view/Wallet.dart';
-import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:ecommerce_app/view/settingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/themes/theme.dart';
@@ -12,7 +10,7 @@ class BtmNavBar extends StatelessWidget {
   final initialPage;
 
 
-  BtmNavBar({
+   BtmNavBar({super.key, 
     required this.initialPage
   });
 
@@ -20,7 +18,7 @@ class BtmNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConvexAppBar(
       backgroundColor: linear2,
-      items: [
+      items:  [
         TabItem(icon: Icons.home, title: 'Home'),
         TabItem(icon: Icons.wallet, title: 'Wallet'),
         TabItem(icon: Icons.settings, title: 'Setting'),
@@ -31,15 +29,15 @@ class BtmNavBar extends StatelessWidget {
         switch(i){
           case 0:
           // Handle tap on Home
-            Get.off(Homebase());
+            Get.off( Homebase());
             break;
           case 1:
           // Handle tap on Favorites
-            Get.off(WalletPage());
+            Get.off( WalletPage());
             break;
           case 2:
           // Handle tap on Search
-            Get.off(SettingPage());
+            Get.off( SettingPage());
             break;
         }
       },

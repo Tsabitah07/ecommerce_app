@@ -1,13 +1,12 @@
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';
-import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/settingComponent/settingButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AccountSettingPage extends StatelessWidget {
-  const AccountSettingPage({super.key});
+   AccountSettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +21,13 @@ class AccountSettingPage extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          SettingButton(text: "Edit Profile"),
-          SettingButton(text: "Account Privacy"),
-          SettingButton(text: "Notification"),
-          SettingButton(text: "Community"),
-          SettingButton(text: "Information"),
+           SettingButton(text: "Edit Profile"),
+           SettingButton(text: "Account Privacy"),
+           SettingButton(text: "Notification"),
+           SettingButton(text: "Community"),
+           SettingButton(text: "Information"),
           InkWell(
-              onTap: () => Get.off(LandingPage()),
+              onTap: () => Get.off( LandingPage()),
               child: Button("Logout", Colors.red, Colors.white)),
         ],
       )),

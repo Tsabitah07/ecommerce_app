@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 class AppbarView extends StatelessWidget {
   final MyAppBarController myController = Get.put(MyAppBarController());
 
+   AppbarView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -78,7 +80,7 @@ class AppbarView extends StatelessWidget {
                         onPressed: () {
                           Wishlist.show(context);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.favorite_border_rounded,
                           color: secondaryColor,
                         ),
@@ -90,7 +92,7 @@ class AppbarView extends StatelessWidget {
             ),
             AnimatedOpacity(
               opacity: myController.showTitle.value ? 0 : 1,
-              duration: Duration(milliseconds: 110),
+              duration: const Duration(milliseconds: 110),
               child: Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: AppBar(
@@ -128,7 +130,7 @@ class AppbarView extends StatelessWidget {
                         radius: 22,
                         child: IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.favorite_border_rounded,
                             color: secondaryColor,
                           ),

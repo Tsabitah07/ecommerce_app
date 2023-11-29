@@ -6,7 +6,7 @@ Widget ProfileDisplayedText (width, text){
   return Container(
     width: width * .7,
     height: 58,
-    padding: EdgeInsets.all(14),
+    padding: const EdgeInsets.all(14),
     decoration: BoxDecoration(
         color: primaryText,
         borderRadius: BorderRadius.circular(15),

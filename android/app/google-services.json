@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280025843834",
+    "project_id": "authentecation-b2c42",
+    "storage_bucket": "authentecation-b2c42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280025843834:android:69f18913c77e0361f793c3",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280025843834-krd726m3mvjdi36b2ra5tj4ehjoeb9n4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf0bsrELxaMIvRzD69PS6CJGbiBUquR7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280025843834-krd726m3mvjdi36b2ra5tj4ehjoeb9n4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,16 +1,14 @@
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';
-import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../themes/theme.dart';
 import '../widget/navigationButton.dart';
-import '../widget/textInput.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+   LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +28,15 @@ class LoginPage extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: InkWell(
-              onTap: () => Get.off(LandingPage()),
+              onTap: () => Get.off( LandingPage()),
               child: Container(
-              margin: EdgeInsets.all(15),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
+              margin:  EdgeInsets.all(15),
+              padding:  EdgeInsets.all(10),
+              decoration:  BoxDecoration(
                 color: primaryText,
                 shape: BoxShape.circle,
               ),
-              child: Icon(
+              child:  Icon(
                 Icons.arrow_back,
                 color: commonText,
               ),
@@ -57,7 +55,7 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 19, bottom: 14),
+                  margin:  EdgeInsets.only(top: 19, bottom: 14),
                   child: Text(
                     "Welcome Back",
                     style: Header,
@@ -66,7 +64,7 @@ class LoginPage extends StatelessWidget {
                 // inputValue("Username", false),
                 // inputValue("Password", true),
                 InkWell(
-                    onTap: () => Get.off(Homebase()),
+                    onTap: () => Get.off( Homebase()),
                     child: Button("LOGIN", primaryText, Colors.black)),
               ],
             ),
@@ -74,6 +72,5 @@ class LoginPage extends StatelessWidget {
         )
       ]),
     );
-    ;
   }
 }

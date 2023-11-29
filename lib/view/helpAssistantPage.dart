@@ -15,7 +15,7 @@ class HelpAssistantPage extends StatelessWidget {
           style: appBarText,
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
           SettingButton(text: "How do i change my payment method?"),
           SettingButton(text: "Why is my transaction failed?"),

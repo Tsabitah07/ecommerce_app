@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 Widget inputValue(
     String hint, bool isObsecure, TextEditingController controller) {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 13, horizontal: 29),
+    margin: const EdgeInsets.symmetric(vertical: 13, horizontal: 29),
     // color: primaryText,
     child: TextField(
       controller: controller,
@@ -26,7 +26,7 @@ Widget inputValue(
 Widget buildImagePreview(String imagePath, size) {
   if (imagePath.isEmpty) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 25),
+      margin: const EdgeInsets.symmetric(vertical: 25),
       width: size, height: size,
       decoration: BoxDecoration(
           color: Colors.black.withOpacity(.2),
@@ -39,7 +39,7 @@ Widget buildImagePreview(String imagePath, size) {
     );
   } else {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       height: size,
       width: size,
       decoration: BoxDecoration(
@@ -51,7 +51,7 @@ Widget buildImagePreview(String imagePath, size) {
       ),
       child: Container(
         width: size, height: size,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
         ),
         child: kIsWeb

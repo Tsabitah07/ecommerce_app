@@ -4,11 +4,11 @@ class DetailOption extends StatelessWidget {
   final icon;
   final String text;
 
-  const DetailOption({required this.icon, required this.text});
+  const DetailOption({super.key, required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 60,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +21,7 @@ class DetailOption extends StatelessWidget {
           Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 13),
+            style: const TextStyle(fontSize: 13),
           ),
         ],
       ),

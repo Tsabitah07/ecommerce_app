@@ -1,11 +1,12 @@
 import 'package:ecommerce_app/controller/walletPageController.dart';
-import 'package:ecommerce_app/widget/textInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:get/get.dart';
 
 class AddPaymentMethod extends StatelessWidget {
   final walletController = Get.put(WalletPageController());
+
+   AddPaymentMethod({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class AddPaymentMethod extends StatelessWidget {
       elevation: 5,
       backgroundColor: Colors.white,
       child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+        padding:  EdgeInsets.symmetric(vertical: 15, horizontal: 5),
         child: Column(
           children: [
             CreditCardWidget(
@@ -49,7 +50,7 @@ class AddPaymentMethod extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Save Payment Method'),
+              child:  Text('Save Payment Method'),
             ),
           ],
         ),

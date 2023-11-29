@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 //On Boarding Content
 class OnBoardingContent extends StatelessWidget {
@@ -22,15 +21,15 @@ class OnBoardingContent extends StatelessWidget {
           image1,
           width: 360,
         ),
-        Spacer(),
+        const Spacer(),
         // SvgPicture.asset(
         //     image2,
         //     width: 230,
         //     )
-        Spacer(),
+        const Spacer(),
 
         //Title
-        Container(
+        SizedBox(
           width: 260,
           child: Text(
             title,
@@ -52,7 +51,7 @@ class OnBoardingContent extends StatelessWidget {
             ),
           ),
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }

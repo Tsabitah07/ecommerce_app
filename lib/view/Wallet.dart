@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../widget/navigationButton.dart';
 
 class WalletPage extends StatelessWidget {
-  const WalletPage({super.key});
+   WalletPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class WalletPage extends StatelessWidget {
         backgroundColor: linear2,
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: screenWidth, height: screenHeight * .9,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +34,7 @@ class WalletPage extends StatelessWidget {
           ),
         )
       ),
-      bottomNavigationBar: BtmNavBar(initialPage: 1,),
+      bottomNavigationBar:  BtmNavBar(initialPage: 1,),
     );
   }
 }

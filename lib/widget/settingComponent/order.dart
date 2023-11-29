@@ -2,7 +2,6 @@ import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/orderPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'detailOption.dart';
 
@@ -10,7 +9,7 @@ class Order extends StatelessWidget {
   final icon;
   final headerText;
 
-  const Order({
+  const Order({super.key, 
     required this.icon,
     required this.headerText
   });
@@ -19,19 +18,19 @@ class Order extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
         width: screenWidth, height: 150,
         // color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => Get.to(OrderPage()),
+              onTap: () => Get.to(const OrderPage()),
               child: Container(
                   height: 45,
-                  margin: EdgeInsets.only(left: 12, right: 12 ,bottom: 5),
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(left: 12, right: 12 ,bottom: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: const BoxDecoration(
                       color: Colors.white70,
                       borderRadius: BorderRadius.vertical(top: Radius.circular(7))
                   ),
@@ -44,7 +43,7 @@ class Order extends StatelessWidget {
                           Icon(icon,
                             size: 30,
                           ),
-                          SizedBox(width: 7,),
+                          const SizedBox(width: 7,),
                           Text(headerText,
                             style: settingBtnText
                           ),
@@ -55,14 +54,14 @@ class Order extends StatelessWidget {
               ),
             ),
             Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(horizontal: 12),
                 height: 90,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.white70,
                     borderRadius: BorderRadius.vertical(bottom: Radius.circular(7))
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(

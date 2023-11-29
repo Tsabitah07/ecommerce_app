@@ -27,8 +27,8 @@ class OrderPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      margin: EdgeInsets.only(top: 7, bottom: 7, left: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.only(top: 7, bottom: 7, left: 8),
                       width: 135,
                       color: Colors.white,
                       child: Row(
@@ -37,13 +37,13 @@ class OrderPage extends StatelessWidget {
                             Text("Belum Bayar",
                               style: GoogleFonts.poppins(),
                             ),
-                            Icon(Icons.arrow_drop_down)
+                            const Icon(Icons.arrow_drop_down)
                           ],
                         ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 23),
-                      margin: EdgeInsets.only(top: 7, bottom: 7, left: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 23),
+                      margin: const EdgeInsets.only(top: 7, bottom: 7, left: 8),
                       width: 135,
                       color: Colors.white,
                       child: Row(
@@ -52,13 +52,13 @@ class OrderPage extends StatelessWidget {
                           Text("Dikemas",
                             style: GoogleFonts.poppins(),
                           ),
-                          Icon(Icons.arrow_drop_down)
+                          const Icon(Icons.arrow_drop_down)
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 29),
-                      margin: EdgeInsets.only(top: 7, bottom: 7, left: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 29),
+                      margin: const EdgeInsets.only(top: 7, bottom: 7, left: 8),
                       width: 135,
                       color: Colors.white,
                       child: Row(
@@ -67,13 +67,13 @@ class OrderPage extends StatelessWidget {
                           Text("Dikirim",
                             style: GoogleFonts.poppins(),
                           ),
-                          Icon(Icons.arrow_drop_down)
+                          const Icon(Icons.arrow_drop_down)
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 30),
-                      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 7),
                       width: 135,
                       color: Colors.white,
                       child: Row(
@@ -82,7 +82,7 @@ class OrderPage extends StatelessWidget {
                           Text("Rating",
                             style: GoogleFonts.poppins(),
                           ),
-                          Icon(Icons.arrow_drop_down)
+                          const Icon(Icons.arrow_drop_down)
                         ],
                       ),
                     ),

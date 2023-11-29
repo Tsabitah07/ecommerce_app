@@ -6,7 +6,7 @@ class PrivacyPolicyContainer extends StatelessWidget {
   final String textBody;
   final double height;
 
-  const PrivacyPolicyContainer({
+  const PrivacyPolicyContainer({super.key, 
     required this.textHeader,
     required this.textBody,
     required this.height
@@ -19,8 +19,8 @@ class PrivacyPolicyContainer extends StatelessWidget {
 
     return Container(
       width: screenWidth, height: height,
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

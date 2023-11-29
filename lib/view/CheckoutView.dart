@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/controller/checkoutController.dart';
 import 'package:lottie/lottie.dart';
+
+import '../controller/CheckoutController.dart';
 
 class CheckoutView extends StatelessWidget {
   final CheckController = Get.put(CheckoutController());
+
+  CheckoutView({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 122, 240, 126),
+      color: const Color.fromARGB(255, 122, 240, 126),
       child: Center(
         child: Lottie.asset(
           'assets/images/Success.json',

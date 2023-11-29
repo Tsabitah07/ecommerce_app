@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController{
   void login(){
-    Get.off(Homebase());
+    Get.off( Homebase());
 
     Get.snackbar("Congrats", "Login Succes");
   }

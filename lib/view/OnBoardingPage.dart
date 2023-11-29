@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:ecommerce_app/widget/onBoardingWidget.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/controller/onBoardingController.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardingPageView extends StatelessWidget {
@@ -36,23 +35,23 @@ class OnBoardingPageView extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 25, left: 25, bottom: 30),
+              padding:  EdgeInsets.only(right: 25, left: 25, bottom: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: secondaryColor),
+                    style: ElevatedButton.styleFrom(backgroundColor: secondaryColor),
                     onPressed: () {
                       if (controller.currentIndex.value > 0) {
                         // Handle navigation to the previous page here
                         controller.pageController.previousPage(
-                          duration: Duration(milliseconds: 300),
+                          duration:  Duration(milliseconds: 300),
                           curve: Curves.ease,
                         );
                       }
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all(8.0),
                       child: Text(
                         'Back',
                         style: GoogleFonts.poppins(
@@ -67,11 +66,11 @@ class OnBoardingPageView extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent, elevation: 0),
                     onPressed: () {
-                      Get.to(LandingPage());
+                      Get.to( LandingPage());
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient: const LinearGradient(
+                        gradient:  LinearGradient(
                           begin: Alignment.centerRight,
                           end: Alignment.centerLeft,
                           colors: [linear1, linear2],
@@ -79,7 +78,7 @@ class OnBoardingPageView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(
+                        padding:  EdgeInsets.only(
                           left: 20,
                           top: 10,
                           bottom: 10,
@@ -101,12 +100,12 @@ class OnBoardingPageView extends StatelessWidget {
                         backgroundColor: secondaryColor),
                     onPressed: () {
                       controller.pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
+                        duration:  Duration(milliseconds: 300),
                         curve: Curves.ease,
                       );
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all(8.0),
                       child: Text(
                         'Next',
                         style: GoogleFonts.poppins(

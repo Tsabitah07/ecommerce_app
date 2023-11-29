@@ -47,12 +47,12 @@ TextStyle Paragraph({required final color}) {
 
 TextStyle Header = GoogleFonts.poppins(
   textStyle:
-      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
+      const TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
 
 TextStyle loginRegisterHeader = GoogleFonts.poppins(
   textStyle:
-      TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
+      const TextStyle(color: commonText, fontSize: 31, fontWeight: FontWeight.bold),
 );
 
 TextStyle buttonTextStyle({color}) {
@@ -74,16 +74,16 @@ TextStyle MiniImportant({required final color}) {
 }
 
 TextStyle profileDataText = GoogleFonts.poppins(
-    textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500));
+    textStyle: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500));
 
 TextStyle settingBtnText = GoogleFonts.poppins(
-    textStyle: TextStyle(
+    textStyle: const TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w400,
 ));
 
 TextStyle appBarText = GoogleFonts.poppins(
-    textStyle: TextStyle(
+    textStyle: const TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.bold,
 ));

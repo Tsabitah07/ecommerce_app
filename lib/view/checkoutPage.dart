@@ -1,39 +1,34 @@
-import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/CheckoutView.dart';
-import 'package:ecommerce_app/view/succesCheckOut.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ecommerce_app/controller/DetailController.dart';
-
-import '../widget/conformCheckoutBtn.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/controller/DetailController.dart';
+
+
 
 class CheckoutPage extends StatelessWidget {
-  final DetailController controller = Get.find();
+  final controller = Get.find<DetailController>();
+
+  CheckoutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: const Text('Checkout'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Your Cart',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
                 itemCount: controller.productList.length,
@@ -41,12 +36,12 @@ class CheckoutPage extends StatelessWidget {
                   var product = controller.productList[index];
                   return Card(
                     elevation: 3,
-                    margin: EdgeInsets.symmetric(vertical: 8),
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ListTile(
-                      contentPadding: EdgeInsets.all(16),
+                      contentPadding: const EdgeInsets.all(16),
                       title: Text(
                         product.productName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -54,10 +49,10 @@ class CheckoutPage extends StatelessWidget {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             'Price: \$${product.price}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black54,
                             ),
@@ -84,7 +79,7 @@ class CheckoutPage extends StatelessWidget {
               onPressed: () {
                 Get.to(CheckoutView());
               },
-              child: Text('Proceed to Checkout'),
+              child: const Text('Proceed to Checkout'),
             ),
           ],
         ),
