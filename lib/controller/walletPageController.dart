@@ -1,35 +1,47 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
+
+import 'package:ecommerce_app/model/eWalletModel.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class WalletPageController extends GetxController {
-  TextEditingController cardNumberController = TextEditingController();
-  TextEditingController expiryDateController = TextEditingController();
-  TextEditingController cardHolderNameController = TextEditingController();
-  TextEditingController cvvCodeController = TextEditingController();
-  TextEditingController bankNameController = TextEditingController();
-  RxBool isCvvFocused = false.obs;
+class WalletController extends GetxController {
+  Rx<List<EWalletModel>> eWalletList = Rx<List<EWalletModel>>([]);
+  TextEditingController eWalletNameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  void updateCardNumber(String value) {
-    cardNumberController.text = value;
+  late EWalletModel eWalletModel;
+  var itemCount = 0.obs;
+  @override
+  void onInit() {
+    super.onInit();
   }
 
-  void updateExpiryDate(String value) {
-    expiryDateController.text = value;
+  @override
+  void onReady() {
+    super.onReady();
   }
 
-  void updateCardHolderName(String value) {
-    cardHolderNameController.text = value;
+  @override
+  void onClose() {
+    super.onClose();
+    eWalletNameController.dispose();
+    phoneNumberController.dispose();
+    passwordController.dispose();
   }
 
-  void updateCvvCode(String value) {
-    cvvCodeController.text = value;
+  addWallet(String eWalletName, String phoneNumber, String password) {
+    eWalletModel = EWalletModel(eWalletName: eWalletName, phoneNumber: phoneNumber, password: password);
+    eWalletList.value.add(eWalletModel);
+    itemCount.value = eWalletList.value.length;
+    eWalletNameController.clear();
+    phoneNumberController.clear();
+    passwordController.clear();
+    Get.back();
   }
 
-  void toggleCvvFocus() {
-    isCvvFocused.value = !isCvvFocused.value;
-  }
-
-  savePaymentMethod(String bankName, String cardNumber, String expiryDate, String cardHolderName, String cvvCode){
-
+  removeWallet(int index) {
+    eWalletList.value.removeAt(index);
+    itemCount.value = eWalletList.value.length;
   }
 }
