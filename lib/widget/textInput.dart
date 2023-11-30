@@ -14,6 +14,8 @@ Widget inputValue(
       obscureText: isObsecure,
       obscuringCharacter: "*",
       decoration: InputDecoration(
+          filled: true,
+          fillColor: primaryText,
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14)
         ),
