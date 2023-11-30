@@ -1,20 +1,23 @@
-import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RegisterController extends GetxController {
-  late TextEditingController emailController = TextEditingController();
-  late TextEditingController usernameController = TextEditingController();
-  late TextEditingController phoneNumberController = TextEditingController();
-  late TextEditingController passwordController = TextEditingController();
+class RegisterController extends GetxController{
+  late TextEditingController emailController;
+  late TextEditingController usernameController;
+  late TextEditingController phoneNumberController;
+  late TextEditingController passwordController;
+
   late RxString imagePath;
 
   @override
   void onInit() {
     super.onInit();
+    emailController = TextEditingController();
+    usernameController = TextEditingController();
+    passwordController = TextEditingController();
     imagePath = RxString('');
   }
 
@@ -26,22 +29,20 @@ class RegisterController extends GetxController {
     }
   }
 
-  Future<void> register() async {
+  Future<void> registerSharedPreferences() async {
     // Implement your registration logic here
-    String emailPath = usernameController.value.text;
-    String usernamePath = passwordController.value.text;
-    String phoneNumberPath = passwordController.value.text;
-    String passwordPath = passwordController.value.text;
+    String email = usernameController.text;
+    String username = passwordController.text;
+    String password = passwordController.text;
 
     // Save user information to SharedPreferences
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('emailPath', emailPath);
-    await prefs.setString('usernamePath', usernamePath);
-    await prefs.setString('phoneNumberPath', phoneNumberPath);
-    await prefs.setString('passwordPath', passwordPath);
+    await prefs.setString('email', email);
+    await prefs.setString('username', username);
+    await prefs.setString('password', password);
     await prefs.setString('imagePath', imagePath.value);
 
-    Get.off(Homebase());
+    Get.off(() => ProfilePage());
 
     Get.snackbar("Congrats", "Login Succes");
 

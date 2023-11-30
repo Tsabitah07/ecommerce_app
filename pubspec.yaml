@@ -33,10 +33,6 @@ dependencies:
   google_fonts: 
   flutter_svg: ^2.0.7
   get:
-  google_sign_in: ^6.1.5
-  firebase_core: 
-  firebase_auth: 
-  cloud_firestore:
   image_picker:
   permission_handler:
   shared_preferences: ^2.2.2
@@ -44,9 +40,7 @@ dependencies:
   curved_navigation_bar: 
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
-
   lottie: ^1.0.1
-
   convex_bottom_bar: ^3.2.0
 
   

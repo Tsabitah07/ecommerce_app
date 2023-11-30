@@ -30,17 +30,18 @@ class LoginPage extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: InkWell(
-            child: Container(
-              margin: EdgeInsets.all(13),
-              padding: EdgeInsets.all(11),
+              onTap: () => Get.off(LandingPage()),
+              child: Container(
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: primaryText,
                 shape: BoxShape.circle,
               ),
-              child: IconButton(
-                  icon: Icon(Icons.arrow_back),
-                  color: commonText,
-                  onPressed: () => Get.back()),
+              child: Icon(
+                Icons.arrow_back,
+                color: commonText,
+              ),
             ),
           ),
         ),
@@ -62,8 +63,8 @@ class LoginPage extends StatelessWidget {
                     style: Header,
                   ),
                 ),
-                inputValue("Username", false),
-                inputValue("Password", true),
+                // inputValue("Username", false),
+                // inputValue("Password", true),
                 InkWell(
                     onTap: () => Get.off(Homebase()),
                     child: Button("LOGIN", primaryText, Colors.black)),

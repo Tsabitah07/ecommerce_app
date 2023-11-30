@@ -57,10 +57,14 @@ class _HompageViewState extends State<HomepageView> {
             SizedBox(
               height: 30,
             ),
-            Center(
-              child: Text(
-                "Category's",
-                style: Headers(color: secondaryColor),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Category's",
+                  style: Headers(color: secondaryColor),
+                ),
               ),
             ),
             SizedBox(
@@ -133,8 +137,15 @@ class _HompageViewState extends State<HomepageView> {
             ),
             SizedBox(
               height: 60,
-              child: Center(
-                child: Text("Catalog", style: Headers(color: secondaryColor)),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Catalog",
+                    style: Headers(color: secondaryColor),
+                  ),
+                ),
               ),
             ),
             Center(

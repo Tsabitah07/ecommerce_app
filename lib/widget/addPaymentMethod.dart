@@ -1,59 +1,54 @@
 import 'package:ecommerce_app/controller/walletPageController.dart';
+import 'package:ecommerce_app/themes/theme.dart';
+import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/textInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AddPaymentMethod extends StatelessWidget {
-  final walletController = Get.put(WalletPageController());
+  final controller = Get.put(WalletController());
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 5,
-      backgroundColor: Colors.white,
-      child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
-        child: Column(
-          children: [
-            CreditCardWidget(
-              cardBgColor: Colors.black87,
-              bankName: walletController.bankNameController.text,
-              cardNumber: walletController.cardNumberController.text,
-              expiryDate: walletController.expiryDateController.text,
-              cardHolderName: walletController.cardHolderNameController.text,
-              cvvCode: walletController.cvvCodeController.text,
-              showBackView: false, onCreditCardWidgetChange: (CreditCardBrand ) {  },
-            ),
-            Expanded(
-                child: SingleChildScrollView(
-                    child: Column(
+      backgroundColor: linear2,
+      child: Container(
+        padding: EdgeInsets.all(15),
+        width: 380, height: 420,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text("Add Payment Method",
+                style: GoogleFonts.poppins(
+                    fontSize: 25, fontWeight: FontWeight.w500
+                ),
+              ),
+              Container(
+                height: 233,
+                  child: Column(
                       children: [
-                        CreditCardWidget(
-                          cardNumber: '',
-                          expiryDate: '',
-                          cardHolderName: '',
-                          cvvCode: '',
-                          showBackView: true,
-                          onCreditCardWidgetChange: (CreditCardBrand ) {  },),
-                      ],
-                    )
-            )),
-            inputValue(
-              "bank Name", false),
-            inputValue("expiry Date", false),
-            inputValue("card Holder Name", false),
-            inputValue("cvv Code", true),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
-              },
-              child: Text('Save Payment Method'),
-            ),
-          ],
-        ),
-      ),
+                        inputValue("E- Wallet Type (Ovo, Dana, Paypal)", false, controller.eWalletNameController),
+                        inputValue("Phone Number", false, controller.phoneNumberController),
+                        inputValue("password", true, controller.passwordController),
+                      ]
+                  )
+              ),
+              InkWell(
+                onTap: () {
+                  controller.addWallet(
+                          controller.eWalletNameController.text,
+                          controller.phoneNumberController.text,
+                          controller.passwordController.text,
+                      );
+                },
+                  child: Button("Add Payment", primaryText, commonText))
+            ],
+          ),
+      )
     );
   }
 }

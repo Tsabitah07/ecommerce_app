@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/DetailController.dart';
 import 'package:ecommerce_app/model/data_model.dart';
+import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/checkoutPage.dart';
 import 'package:flutter/material.dart';
 import 'Sheets.dart';
@@ -26,7 +27,6 @@ class DetailPage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        // Kembali
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -131,7 +131,7 @@ class DetailPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF475269),
+                        color: primaryColor,
                       ),
                     ),
                     SizedBox(height: 15),
@@ -152,11 +152,13 @@ class DetailPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w500,
-                            color: Colors.redAccent,
+                            color: linear2,
                           ),
                           textAlign: TextAlign.left,
                         ),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: primaryColor),
                           onPressed: () {
                             Product product = Product(
                               productName: argument["product_name"] as String,
