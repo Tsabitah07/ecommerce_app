@@ -484,16 +484,17 @@ final List<Map<String, String>> HOTSALE = [
   },
   {
     "name": "Adidas Shorts",
-    "img": "https://www.adidas.co.id/media/catalog/product/h/3/h31069_2_apparel_photography_front20center20view_grey.jpg"
+    "img":
+        "https://www.adidas.co.id/media/catalog/product/h/3/h31069_2_apparel_photography_front20center20view_grey.jpg"
   },
   {
     "name": "Adidas shirt",
-    "img": "https://www.adidas.co.id/media/catalog/product/i/b/ib7410_2_apparel_photography_front20center20view_grey.jpg"
+    "img":
+        "https://www.adidas.co.id/media/catalog/product/i/b/ib7410_2_apparel_photography_front20center20view_grey.jpg"
   },
   {
     "name": "Adidas Black Sneaker",
-    "img": "https://media.kohlsimg.com/is/image/kohls/5533230_Black_White_Black?wid=240&hei=240&op_sharpen=1"
+    "img":
+        "https://media.kohlsimg.com/is/image/kohls/5533230_Black_White_Black?wid=240&hei=240&op_sharpen=1"
   },
 ];
-
-
