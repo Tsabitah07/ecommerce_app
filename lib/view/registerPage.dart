@@ -52,7 +52,7 @@ class RegisterPage extends StatelessWidget {
                   inputValue('Username', false, controller.usernameController),
                   inputValue('Password', true, controller.passwordController),
                   InkWell(
-                    onTap: () => controller.registerSharedPreferences(),
+                    onTap: () => controller.createUserLogin(),
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       child: Button('REGISTER', linear2, Colors.black),

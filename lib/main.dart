@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/firebase_options.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:ecommerce_app/view/DetailProduct.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';
@@ -12,11 +13,16 @@ import 'package:ecommerce_app/view/registerPage.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/settingPage.dart';
 import 'package:ecommerce_app/widget/addPaymentMethod.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // theme: customTheme,
       debugShowCheckedModeBanner: false,
-      home: WalletPage(),
+      home: Splash(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/controller/profileController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,37 +18,54 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile Page",
+        title: Text(
+          "Profile Page",
           style: appBarText,
         ),
         backgroundColor: linear2,
       ),
-      body: Obx(() => SingleChildScrollView(
-        child: Container(
-          width: screenWidth,
-          child: Column(
-            children: [
-              buildImagePreview(controller.strImage.value, screenWidth * .35),
-              Container(
-                  width: screenWidth * .83,
-                  height: screenHeight * .55,
-                  decoration: BoxDecoration(
-                    // color: commonText,
-                      borderRadius: BorderRadius.circular(23)
-                  ),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:[
-                        ProfileDisplayedText(screenWidth, 'Email : ${controller.strEmail.value}'),
-                        ProfileDisplayedText(screenWidth, 'Username : ${controller.strUsername.value}'),
-                        ProfileDisplayedText(screenWidth, 'Password : ${controller.strPassword.value}'),
-                      ]
-                  )
-              )
-            ],
-          ),
-        ),
-      ),)
+      body: FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        future: controller.getData(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+          if (snapshot.hasError) {
+            return Text("Something went wrong");
+          }
+
+          if (snapshot.connectionState == ConnectionState.done) {
+final data = snapshot.data!.docs.first.data() as Map<String, dynamic>;
+
+            return Container(
+              width: screenWidth,
+              child: Column(
+                children: [
+                  buildImagePreview(
+                      controller.strImage.value, screenWidth * .35),
+                  Container(
+                      width: screenWidth * .83,
+                      height: screenHeight * .55,
+                      decoration: BoxDecoration(
+                          // color: commonText,
+                          borderRadius: BorderRadius.circular(23)),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProfileDisplayedText(screenWidth,
+                                'Email : ${data["email"]}'),
+                            ProfileDisplayedText(screenWidth,
+                                'Username : ${data["username"]}'),
+                            ProfileDisplayedText(screenWidth,
+                                'Password : ${data["password"]}'),
+                          ]))
+                ],
+              ),
+            );
+          }
+
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }

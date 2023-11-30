@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,11 +15,12 @@ class ProfileController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    checkSharedPreference();
+    // checkSharedPreference();
+    getData();
   }
 
-  Future<void> checkSharedPreference() async{
-    try{
+  Future<void> checkSharedPreference() async {
+    try {
       prefs = await SharedPreferences.getInstance();
       strEmail.value = prefs.getString('email') ?? "no data";
       strUsername.value = prefs.getString('username') ?? "no data";
@@ -25,5 +30,16 @@ class ProfileController extends GetxController {
     } catch (e) {
       print('Error initializing SharedPreferences: $e');
     }
+  }
+
+  Future<QuerySnapshot<Map<String, dynamic>>> getData() {
+    final user = FirebaseAuth.instance.currentUser;
+    String? email = user!.email;
+    print(email);
+    final data = FirebaseFirestore.instance
+        .collection("users")
+        .where("email", isEqualTo: email)
+        .get();
+    return data;
   }
 }
