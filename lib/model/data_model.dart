@@ -212,17 +212,17 @@ var products = [
     "product_image":
         "https://images.tokopedia.net/img/cache/700/VqbcmM/2023/7/12/5c68e446-0ec2-45e1-85ef-48e87e3fdf86.jpg"
   },
-  {
-    "product_name": "Skechers White T-Shirt",
-    "brand": "Skechers",
-    "product_type": "shirt",
-    "price": 12.99,
-    "description": "A short sleeves white t-shirt",
-    "product_size": ["m", "xl", "xxl"],
-    "stock": 120,
-    "product_image":
-        "https://www.skechers.id/media/catalog/product/cache/c1feb3550df60acd013ba17bf29e4991/0/8/0888-SKEH23M2118W00W0XL-1.jpg"
-  },
+  // {
+  //   "product_name": "Skechers White T-Shirt",
+  //   "brand": "Skechers",
+  //   "product_type": "shirt",
+  //   "price": 12.99,
+  //   "description": "A short sleeves white t-shirt",
+  //   "product_size": ["m", "xl", "xxl"],
+  //   "stock": 120,
+  //   "product_image":
+  //       "https://www.skechers.id/media/catalog/product/cache/c1feb3550df60acd013ba17bf29e4991/0/8/0888-SKEH23M2118W00W0XL-1.jpg"
+  // },
   {
     "product_name": "Skechers Grey Shorts",
     "brand": "Skechers",
@@ -476,4 +476,3 @@ var products = [
 void main() {
   products;
 }
-
