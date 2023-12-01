@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/controller/loginController.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';
 import 'package:ecommerce_app/view/registerPage.dart';
@@ -10,7 +11,8 @@ import '../widget/navigationButton.dart';
 import '../widget/textInput.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final controller = Get.put(LoginController());
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +32,8 @@ class LoginPage extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: InkWell(
-              onTap: () => Get.off(LandingPage()),
-              child: Container(
+            onTap: () => Get.off(LandingPage()),
+            child: Container(
               margin: EdgeInsets.all(15),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -63,10 +65,10 @@ class LoginPage extends StatelessWidget {
                     style: Header,
                   ),
                 ),
-                // inputValue("Username", false),
-                // inputValue("Password", true),
+                inputValue("Username", false, controller.emailController),
+                inputValue("Password", true, controller.passwordController),
                 InkWell(
-                    onTap: () => Get.off(Homebase()),
+                    onTap: () => controller.userLogin(),
                     child: Button("LOGIN", primaryText, Colors.black)),
               ],
             ),

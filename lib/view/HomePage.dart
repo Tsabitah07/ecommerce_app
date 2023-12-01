@@ -32,17 +32,6 @@ class Homebase extends StatelessWidget {
                   actions: [
                     Padding(
                       padding: const EdgeInsets.only(top: 5, left: 0),
-                      child: CircleAvatar(
-                        backgroundColor: secondaryColor,
-                        radius: 22,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite_border_rounded,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 ),
@@ -57,24 +46,6 @@ class Homebase extends StatelessWidget {
                     child: AppBar(
                       backgroundColor: Colors.white,
                       elevation: 0,
-                      actions: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5, right: 0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 22,
-                            child: IconButton(
-                              onPressed: () {
-                                Wishlist.show(context);
-                              },
-                              icon: Icon(
-                                Icons.favorite_border_rounded,
-                                color: secondaryColor,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ),

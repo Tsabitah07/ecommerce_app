@@ -3,6 +3,7 @@ import 'package:ecommerce_app/view/LandingPage.dart';
 import 'package:ecommerce_app/view/LoginPage.dart';
 import 'package:ecommerce_app/widget/navigationButton.dart';
 import 'package:ecommerce_app/widget/settingComponent/settingButton.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +29,10 @@ class AccountSettingPage extends StatelessWidget {
           SettingButton(text: "Community"),
           SettingButton(text: "Information"),
           InkWell(
-              onTap: () => Get.off(LandingPage()),
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                Get.offAll(LandingPage());
+              },
               child: Button("Logout", Colors.red, Colors.white)),
         ],
       )),
