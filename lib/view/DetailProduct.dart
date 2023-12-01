@@ -173,7 +173,10 @@ class DetailPage extends StatelessWidget {
                             controller.addToProductList(product);
                             Get.to(CheckoutPage());
                           },
-                          child: Text("Buy Now"),
+                          child: Text(
+                            "Buy Now",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),

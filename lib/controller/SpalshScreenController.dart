@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,21 +11,23 @@ class SplashController extends GetxController {
   late final SharedPreferences prefs;
 
   @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
+  void onReady() {
+    // TODO: implement onReady
     checkSharedPreference();
+    super.onReady();
   }
 
   void checkSharedPreference() async {
-    final user = FirebaseAuth.instance.currentUser!;
-    // print(user!.);
-    Future.delayed(Duration(seconds: 2), () async {
-      // if (user!.email == "" || user!.email == null) {
-      //   Get.off(LandingPage());
-      // } else {
-      //   Get.off(Homebase());
-      // }
+    // final user = FirebaseAuth.instance.currentUser!;
+    // // print(user!.);
+    User? user = FirebaseAuth.instance.currentUser;
+    Future.delayed(Duration(seconds: 2), () {
+      if (user == "" || user == null) {
+        Get.off(LandingPage());
+      } else {
+        Get.off(Homebase());
+      }
     });
+
   }
 }

@@ -43,17 +43,17 @@ var products = [
     "product_image":
         "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/586674/52/fv/fnd/IDN/fmt/png"
   },
-  {
-    "product_name": "Puma White Running Shorts",
-    "brand": "Nevada",
-    "product_type": "pants",
-    "price": 7.99,
-    "description": "Shorts that fit both men and women",
-    "product_size": ["s", "xl", "xxl"],
-    "stock": 85,
-    "product_image":
-        "https://cdn.istyle.im/images/product/web/67/54/35/01/0/000001355467_01_800.png.webp"
-  },
+  // {
+  //   "product_name": "Puma White Running Shorts",
+  //   "brand": "Nevada",
+  //   "product_type": "pants",
+  //   "price": 7.99,
+  //   "description": "Shorts that fit both men and women",
+  //   "product_size": ["s", "xl", "xxl"],
+  //   "stock": 85,
+  //   "product_image":
+  //       "https://cdn.istyle.im/images/product/web/67/54/35/01/0/000001355467_01_800.png",
+  // },
   {
     "product_name": "Puma White Sneakers",
     "brand": "Puma",
@@ -66,17 +66,17 @@ var products = [
     "product_image":
         "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/389390/01/sv01/fnd/EEA/fmt/png/Carina-Street-Sneakers-Women"
   },
-  {
-    "product_name": "Puma Black Hat",
-    "brand": "Puma",
-    "product_type": "hat",
-    "price": 12.99,
-    "description": "A casual black hat from Puma",
-    "product_size": ["m", "xl", "xxl"],
-    "stock": 120,
-    "product_image":
-        "https://www.planetsports.asia/media/catalog/product/cache/932b880b51303ef8bdfacfab1d810ff5/0/1/01-PUMA-E04HPPMA0-Puma-Unisex-Running-Cap-III---Black-Black.jpg"
-  },
+  // {
+  //   "product_name": "Puma Black Hat",
+  //   "brand": "Puma",
+  //   "product_type": "hat",
+  //   "price": 12.99,
+  //   "description": "A casual black hat from Puma",
+  //   "product_size": ["m", "xl", "xxl"],
+  //   "stock": 120,
+  //   "product_image":
+  //       "https://www.planetsports.asia/media/catalog/product/cache/932b880b51303ef8bdfacfab1d810ff5/0/1/01-PUMA-E04HPPMA0-Puma-Unisex-Running-Cap-III---Black-Black.jpg"
+  // },
   {
     "product_name": "Puma Black T-Shirt",
     "brand": "Puma",
@@ -122,17 +122,17 @@ var products = [
     "product_image":
         "https://getyourhooey.com/cdn/shop/products/7162T-BK_2_grande.jpg?v=1650582634"
   },
-  {
-    "product_name": "Nevada Black T-Shirt",
-    "brand": "Nevada",
-    "product_type": "shirt",
-    "price": 12.99,
-    "description": "A short sleeves black t-shirt from nevada",
-    "product_size": ["m", "xl", "xxl"],
-    "stock": 120,
-    "product_image":
-        "https://dynamic.bonfireassets.com/thumb/design-image/dfd70c00-e4e2-4225-a6ae-f834f421b199/7329f207-b69c-4f7e-8322-9f628fd81358/900/"
-  },
+  // {
+  //   "product_name": "Nevada Black T-Shirt",
+  //   "brand": "Nevada",
+  //   "product_type": "shirt",
+  //   "price": 12.99,
+  //   "description": "A short sleeves black t-shirt from nevada",
+  //   "product_size": ["m", "xl", "xxl"],
+  //   "stock": 120,
+  //   "product_image":
+  //       "https://dynamic.bonfireassets.com/thumb/design-image/dfd70c00-e4e2-4225-a6ae-f834f421b199/7329f207-b69c-4f7e-8322-9f628fd81358/900/"
+  // },
   {
     "product_name": "Nevada Black Running Shorts",
     "brand": "Nevada",
@@ -144,63 +144,63 @@ var products = [
     "product_image":
         "https://media.karousell.com/media/photos/products/2023/9/4/nevada_denim_black_shorts__cel_1693824601_c2f44f52.jpg"
   },
-  {
-    "product_name": "Nevada Black Sneakers",
-    "brand": "Nevada",
-    "product_type": "shoes",
-    "price": 25.45,
-    "description":
-        "These sneakers are popular among teenage girl for being simple, comfy, and fashionable.",
-    "product_size": ["35", "37", "38", "39"],
-    "stock": 90,
-    "product_image":
-        "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/99/MTA-133817066/brd-94288_-sale-vera-nevada-sepatu-sneakers-wanita-sport-shoes-a811_full06-7f89284e.jpg"
-  },
-  {
-    "product_name": "Nevada White Hat",
-    "brand": "Nevada",
-    "product_type": "hat",
-    "price": 12.99,
-    "description": "A casual white hat from nevada",
-    "product_size": ["m", "xl", "xxl"],
-    "stock": 115,
-    "product_image":
-        "https://juliesaffrin.com/wp-content/uploads/2022/11/classic-dad-hat-white-left-front-638798b78b5eb.jpg"
-  },
-  {
-    "product_name": "Nevada White T-Shirt",
-    "brand": "Nevada",
-    "product_type": "shirt",
-    "price": 12.99,
-    "description": "A short sleeves white t-shirt from nevada",
-    "product_size": ["m", "xl", "xxl"],
-    "stock": 120,
-    "product_image":
-        "https://www.screamous.com/cdn/shop/products/id-11134201-23030-z32wli3ir9nv91_0e235aa4-e450-4c78-89f1-80c03fdb4ed0.jpg?v=1677933145"
-  },
-  {
-    "product_name": "Nevada White Shorts",
-    "brand": "Nevada",
-    "product_type": "pants",
-    "price": 7.99,
-    "description": "Shorts that comfy to use for daily",
-    "product_size": ["s", "xl", "xxl"],
-    "stock": 85,
-    "product_image":
-        "https://dressmann.imgix.net/globalassets/xx-archive/productimages/7351283_900_f_q_shorts_nevada-color__dressmannxl__.jpg"
-  },
-  {
-    "product_name": "Nevada White Sneakers",
-    "brand": "Nevada",
-    "product_type": "shoes",
-    "price": 25.45,
-    "description":
-        "These sneakers are popular among teenage girl for being simple, comfy, and fashionable.",
-    "product_size": ["35", "37", "38", "39"],
-    "stock": 90,
-    "product_image":
-        "https://media.karousell.com/media/photos/products/2018/01/25/white_sneakers_nevada_1516809780_abab7adf.jpg"
-  },
+  // {
+  //   "product_name": "Nevada Black Sneakers",
+  //   "brand": "Nevada",
+  //   "product_type": "shoes",
+  //   "price": 25.45,
+  //   "description":
+  //       "These sneakers are popular among teenage girl for being simple, comfy, and fashionable.",
+  //   "product_size": ["35", "37", "38", "39"],
+  //   "stock": 90,
+  //   "product_image":
+  //       "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/99/MTA-133817066/brd-94288_-sale-vera-nevada-sepatu-sneakers-wanita-sport-shoes-a811_full06-7f89284e.jpg"
+  // },
+  // {
+  //   "product_name": "Nevada White Hat",
+  //   "brand": "Nevada",
+  //   "product_type": "hat",
+  //   "price": 12.99,
+  //   "description": "A casual white hat from nevada",
+  //   "product_size": ["m", "xl", "xxl"],
+  //   "stock": 115,
+  //   "product_image":
+  //       "https://juliesaffrin.com/wp-content/uploads/2022/11/classic-dad-hat-white-left-front-638798b78b5eb.jpg"
+  // },
+  // {
+  //   "product_name": "Nevada White T-Shirt",
+  //   "brand": "Nevada",
+  //   "product_type": "shirt",
+  //   "price": 12.99,
+  //   "description": "A short sleeves white t-shirt from nevada",
+  //   "product_size": ["m", "xl", "xxl"],
+  //   "stock": 120,
+  //   "product_image":
+  //       "https://www.screamous.com/cdn/shop/products/id-11134201-23030-z32wli3ir9nv91_0e235aa4-e450-4c78-89f1-80c03fdb4ed0.jpg?v=1677933145"
+  // },
+  // {
+  //   "product_name": "Nevada White Shorts",
+  //   "brand": "Nevada",
+  //   "product_type": "pants",
+  //   "price": 7.99,
+  //   "description": "Shorts that comfy to use for daily",
+  //   "product_size": ["s", "xl", "xxl"],
+  //   "stock": 85,
+  //   "product_image":
+  //       "https://dressmann.imgix.net/globalassets/xx-archive/productimages/7351283_900_f_q_shorts_nevada-color__dressmannxl__.jpg"
+  // },
+  // {
+  //   "product_name": "Nevada White Sneakers",
+  //   "brand": "Nevada",
+  //   "product_type": "shoes",
+  //   "price": 25.45,
+  //   "description":
+  //       "These sneakers are popular among teenage girl for being simple, comfy, and fashionable.",
+  //   "product_size": ["35", "37", "38", "39"],
+  //   "stock": 90,
+  //   "product_image":
+  //       "https://media.karousell.com/media/photos/products/2018/01/25/white_sneakers_nevada_1516809780_abab7adf.jpg"
+  // },
   {
     "product_name": "Skechers White Hat",
     "brand": "Skechers",
@@ -477,24 +477,3 @@ void main() {
   products;
 }
 
-final List<Map<String, String>> HOTSALE = [
-  {
-    "name": "Adidas White Sneaker",
-    "img": "https://s4.bukalapak.com/img/43384213003/s-463-463/data.jpeg.webp"
-  },
-  {
-    "name": "Adidas Shorts",
-    "img":
-        "https://www.adidas.co.id/media/catalog/product/h/3/h31069_2_apparel_photography_front20center20view_grey.jpg"
-  },
-  {
-    "name": "Adidas shirt",
-    "img":
-        "https://www.adidas.co.id/media/catalog/product/i/b/ib7410_2_apparel_photography_front20center20view_grey.jpg"
-  },
-  {
-    "name": "Adidas Black Sneaker",
-    "img":
-        "https://media.kohlsimg.com/is/image/kohls/5533230_Black_White_Black?wid=240&hei=240&op_sharpen=1"
-  },
-];

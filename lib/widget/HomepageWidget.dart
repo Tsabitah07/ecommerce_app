@@ -154,7 +154,7 @@ class _HompageViewState extends State<HomepageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 7; i < 20; i++)
+                    for (var i = 1; i < 9; i++)
                       InkWell(
                         onTap: () {
                           Get.to(DetailPage(), arguments: products[i]);
