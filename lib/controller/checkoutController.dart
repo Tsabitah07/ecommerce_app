@@ -17,7 +17,7 @@ class CheckControll extends GetxController {
   void checkSharedPreference() async {
     prefs = await SharedPreferences.getInstance();
     Future.delayed(Duration(seconds: 2), () async {
-      Get.off(Homebase());
+      Get.offAll(Homebase());
     });
   }
 }

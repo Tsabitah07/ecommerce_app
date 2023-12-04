@@ -81,7 +81,7 @@ class CheckoutPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(CheckoutView());
+                Get.off(CheckoutView());
               },
               child: Text('Proceed to Checkout'),
             ),

@@ -19,33 +19,41 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Setting",
-          style: appBarText
-        ),
+        title: Text("Setting", style: appBarText),
         backgroundColor: linear2,
       ),
       body: SingleChildScrollView(
         child: Column(
+          // children: [
+          //                   ProfileDisplayedText(
+          //                       screenWidth, 'Email : ${data["email"]}'),
+          //                   ProfileDisplayedText(
+          //                       screenWidth, 'Username : ${data["username"]}'),
+          //                   ProfileDisplayedText(
+          //                       screenWidth, 'Password : ${data["password"]}'),
+          //                 ]
           children: [
-            Profile(username: "Username", email: "User Email"),
+            Profile(),
             Order(icon: Icons.calendar_today_rounded, headerText: "My Order"),
             MyWallet(icon: Icons.wallet_sharp, headerText: "My Wallet"),
             InkWell(
               onTap: () => Get.to(AccountSettingPage()),
-                child: SettingButton(text: "Account Setting"),
+              child: SettingButton(text: "Account Setting"),
             ),
             InkWell(
               onTap: () => Get.to(PrivacyPolicyPage()),
-                child: SettingButton(text: "Privacy Policy"),
+              child: SettingButton(text: "Privacy Policy"),
             ),
             InkWell(
               onTap: () => Get.to(HelpAssistantPage()),
-                child: SettingButton(text: "Help Assistant"),
+              child: SettingButton(text: "Help Assistant"),
             )
           ],
         ),
       ),
-      bottomNavigationBar: BtmNavBar(initialPage: 2,),
+      bottomNavigationBar: BtmNavBar(
+        initialPage: 2,
+      ),
     );
   }
 }

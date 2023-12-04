@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/controller/profileController.dart';
 import 'package:ecommerce_app/themes/theme.dart';
@@ -26,20 +28,30 @@ class ProfilePage extends StatelessWidget {
       ),
       body: FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
         future: controller.getData(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+        builder: (BuildContext context,
+            AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.hasError) {
             return Text("Something went wrong");
           }
 
           if (snapshot.connectionState == ConnectionState.done) {
-final data = snapshot.data!.docs.first.data() as Map<String, dynamic>;
+            final data =
+                snapshot.data!.docs.first.data() as Map<String, dynamic>;
 
             return Container(
               width: screenWidth,
               child: Column(
                 children: [
-                  buildImagePreview(
-                      controller.strImage.value, screenWidth * .35),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Image.network(
+                      data["image"],
+                      height: 250,
+                      width: 250,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  // buildImagePreview(controller.strImage.value, screenWidth * .35),
                   Container(
                       width: screenWidth * .83,
                       height: screenHeight * .55,
@@ -49,12 +61,12 @@ final data = snapshot.data!.docs.first.data() as Map<String, dynamic>;
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            ProfileDisplayedText(screenWidth,
-                                'Email : ${data["email"]}'),
-                            ProfileDisplayedText(screenWidth,
-                                'Username : ${data["username"]}'),
-                            ProfileDisplayedText(screenWidth,
-                                'Password : ${data["password"]}'),
+                            ProfileDisplayedText(
+                                screenWidth, 'Email : ${data["email"]}'),
+                            ProfileDisplayedText(
+                                screenWidth, 'Username : ${data["username"]}'),
+                            ProfileDisplayedText(
+                                screenWidth, 'Password : ${data["password"]}'),
                           ]))
                 ],
               ),
