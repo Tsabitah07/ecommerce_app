@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -11,6 +9,7 @@ class ProfileController extends GetxController {
   RxString strUsername = "".obs;
   RxString strPassword = "".obs;
   RxString strImage = "".obs;
+
 
   void onInit() {
     // TODO: implement onInit

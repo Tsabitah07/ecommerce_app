@@ -4,7 +4,8 @@ import 'package:ecommerce_app/controller/checkoutController.dart';
 import 'package:lottie/lottie.dart';
 
 class CheckoutView extends StatelessWidget {
-  final CheckController = Get.put(CheckoutController());
+  final CheckControll checkController = Get.put(CheckControll()); // Fix typo here
+
   @override
   Widget build(BuildContext context) {
     return Container(

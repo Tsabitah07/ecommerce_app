@@ -1,4 +1,3 @@
-import 'dart:js_interop';
 
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/LandingPage.dart';

@@ -2,10 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/view/HomePage.dart';
 import 'package:ecommerce_app/view/profilePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'dart:io';
 
 class RegisterController extends GetxController {
   late TextEditingController emailController;
@@ -15,6 +18,7 @@ class RegisterController extends GetxController {
 
   late RxString imagePath;
 
+  var imageUrl = "".obs;
   @override
   void onInit() {
     super.onInit();
@@ -56,6 +60,7 @@ class RegisterController extends GetxController {
         email: emailController.text,
         password: passwordController.text,
       );
+      await uploadImage();
       await addDataToFirestore(); // Wait for addDataToFirestore to complete
       Get.off(Homebase());
     } on FirebaseAuthException catch (e) {
@@ -67,6 +72,38 @@ class RegisterController extends GetxController {
     }
   }
 
+Future<void> uploadImage() async {
+  try {
+    // Get the current user ID
+    String? userId = FirebaseAuth.instance.currentUser?.uid ?? "";
+    
+    // Create a reference to the storage location
+    final storageRef = FirebaseStorage.instance.ref().child("profile_picture/$userId.jpg");
+
+    // Get the file from the image path
+    File imageFile = File(imagePath.value);
+
+    // Upload the file to Firebase Storage
+    UploadTask uploadTask = storageRef.putFile(imageFile);
+
+    // Wait for the upload to complete
+    await uploadTask.whenComplete(() => null);
+
+    // Get the download URL of the uploaded image
+    imageUrl.value = await storageRef.getDownloadURL();
+
+    // Update the user's photo URL in Firebase Auth
+    await FirebaseAuth.instance.currentUser?.updatePhotoURL(imageUrl.value);
+
+    // Print the download URL for debugging
+    print("Image URL: ${imageUrl.value}");
+  } catch (error) {
+    // Handle any potential errors during the upload process
+    print("Error uploading image: $error");
+    // You might want to throw or return an error here depending on your use case
+  }
+}
+
   Future<void> addDataToFirestore() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     try {
@@ -77,7 +114,8 @@ class RegisterController extends GetxController {
         'id': user?.uid,
         'username': usernameController.text,
         'email': emailController.text,
-        "password": passwordController.text
+        "password": passwordController.text,
+        "image": imageUrl.value
         // Add more fields as needed
       });
     } catch (e) {
